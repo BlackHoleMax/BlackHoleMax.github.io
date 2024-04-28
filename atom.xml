@@ -1,18 +1,314 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-	<title><< site.name >></title>
-		<description><< site.description >></description>
-		<link><< site.baseurl >><< site.url >></link>
-		<atom:link href="<< site.baseurl >><< site.url >>/feed.xml" rel="self" type="application/rss+xml" />
-		{$ for post in site.posts limit:10 $}
-			<item>
-				<title><< post.title >></title>
-				<description><< post.content | xml_escape >></description>
-				<pubDate><< post.date | date: "%a, %d %b %Y %H:%M:%S %z" >></pubDate>
-				<link><< site.url >><< site.baseurl>><< post.url >></link>
-				<guid isPermaLink="true"><< site.url >><< site.baseurl >><< post.url >></guid>
-			</item>
-		{$ endfor $}
-	</channel>
-</rss>
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>BlackHoleMax</title>
+  
+  <subtitle>一个不知名小博客</subtitle>
+  <link href="https://blackholemax.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://blackholemax.github.io/"/>
+  <updated>2024-04-28T13:06:35.822Z</updated>
+  <id>https://blackholemax.github.io/</id>
+  
+  <author>
+    <name>BlackHoleMax</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>来聊聊必学的sql知识</title>
+    <link href="https://blackholemax.github.io/2024/04/29/tech/SQL%E5%BF%85%E5%AD%A6/"/>
+    <id>https://blackholemax.github.io/2024/04/29/tech/SQL%E5%BF%85%E5%AD%A6/</id>
+    <published>2024-04-29T10:10:08.000Z</published>
+    <updated>2024-04-28T13:06:35.822Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="来聊聊必学的sql知识"><a href="#来聊聊必学的sql知识" class="headerlink" title="来聊聊必学的sql知识"></a>来聊聊必学的sql知识</h1><p>SQL（结构化查询语言）是数据库管理系统中用于数据操作、管理和查询的标准编程语言。要掌握SQL，我认为以下操作和知识点是必须学习的：</p><ol><li><p><strong>数据定义</strong>：这是创建数据库对象（如表、索引和约束）的基础。通过数据定义，可以确保数据的一致性和完整性。</p></li><li><p><strong>数据查询</strong>：SELECT语句是SQL中最核心的部分，它允许用户从数据库中检索数据。掌握SELECT语句的应用技巧，包括分组、聚合、交集、差集、连接和联合查询等，是使用SQL进行数据查询的关键。</p></li><li><p><strong>数据操作</strong>：包括INSERT（插入新数据）、UPDATE（更新现有数据）和DELETE（删除数据）。这些操作对于维护数据库的准确性和时效性至关重要。</p></li><li><p><strong>多表操作</strong>：能够灵活地处理多表之间的关系，是SQL的一个强大功能。这包括单表的基本查询、关键字辅助查询、统计查询以及多表的连接查询和嵌套查询。</p></li><li><p><strong>子查询和视图</strong>：子查询允许在一个查询中嵌套另一个查询，而视图则提供了一种将复杂查询结果抽象化的方法，简化了数据的访问和管理。</p></li><li><p><strong>存储过程和触发器</strong>：存储过程是一组为了完成特定功能的SQL语句集合，可以提高数据库操作的效率和安全性。触发器则是在满足特定条件时自动执行的SQL语句，用于维护数据的完整性和一致性。</p></li><li><p><strong>性能优化</strong>：了解如何优化SQL查询的性能是非常重要的，这包括选择合适的索引、避免复杂的子查询、合理使用JOIN操作等。</p></li><li><p><strong>安全性和最佳实践</strong>：保护数据库免受未授权访问和攻击是非常重要的。了解SQL注入等常见安全威胁，并采取预防措施来保护数据的安全性。</p></li></ol><p>总之，SQL的学习不仅仅是关于语法的掌握，更重要的是理解其背后的原理和最佳实践，以及如何有效地使用SQL来解决实际问题。通过学习上述关键操作和知识点，可以有效地提高在数据库管理和应用开发中的能力。SQL基本上是任何从事后端开发的程序员必学的技能，甚至比任何一门后端语言都更加重要，希望同学们务必要掌握。这里也是推荐去读《高性能MySQL第四版》<br>豆瓣链接：<u><a href="https://book.douban.com/subject/36096578/">https://book.douban.com/subject/36096578/</a></u></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;来聊聊必学的sql知识&quot;&gt;&lt;a href=&quot;#来聊聊必学的sql知识&quot; class=&quot;headerlink&quot; title=&quot;来聊聊必学的sql知识&quot;&gt;&lt;/a&gt;来聊聊必学的sql知识&lt;/h1&gt;&lt;p&gt;SQL（结构化查询语言）是数据库管理系统中用于数据操作、管理和查询的</summary>
+      
+    
+    
+    
+    <category term="开发" scheme="https://blackholemax.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="阅读" scheme="https://blackholemax.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+    <category term="SQL" scheme="https://blackholemax.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>意识形态国家机器（AIE）笔记</title>
+    <link href="https://blackholemax.github.io/2024/04/28/read/%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81%E5%9B%BD%E5%AE%B6%E6%9C%BA%E5%99%A8%EF%BC%88AIE%EF%BC%89/"/>
+    <id>https://blackholemax.github.io/2024/04/28/read/%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81%E5%9B%BD%E5%AE%B6%E6%9C%BA%E5%99%A8%EF%BC%88AIE%EF%BC%89/</id>
+    <published>2024-04-28T12:10:08.000Z</published>
+    <updated>2024-04-28T12:11:35.920Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="什么是意识形态国家机器（AIE）呢"><a href="#什么是意识形态国家机器（AIE）呢" class="headerlink" title="什么是意识形态国家机器（AIE）呢?"></a>什么是意识形态国家机器（AIE）呢?</h1><blockquote><p>阿尔都塞《意识形态和意识形态国家机器－研究笔记（1970）》节选</p></blockquote><p>​一定不能把它们与（镇压性）国家机器混为一谈。别忘了在马克思主义理论中，<span style="background:#d3f8b6">国家机器（AE）包括政府、行政机关、军队、警察、法庭、监狱等等，它们构成了我今后要称作镇压性国家机器的东西。“镇压性”意味着上述国家机器是“通过暴力发挥功能”的</span>——至少最终会是这样（因为镇压也可以采取非肉体的形式，比如行政压制）。</p><p>　　我所说的意识形态国家机器是这样一些现实，它们以一些各具特点的、专门化机构的形式呈现在临近的观察者面前。我给这些现实开出了一个经验性的清单，它显然还必需接受仔细的考察、检验、修改和重组。尽管有这种需要包含着的所有保留意见，我们暂时还是可以把下列机构看成是意识形态国家机器（我列举的顺序没有任何特殊的含义）：<br>　　<em>——宗教的AIE(由不同教会构成的制度)，</em><br>　　<em>——教育的AIE(由不同公立和私立“学校”构成的制度)，</em><br>　　<em>——家庭AIE，</em><br>　　<em>——法律的AIE，</em><br>　　<em>——政治的AIE(政治制度，包括不同党派)，</em><br>　　<em>——工会AIE，</em><br>　　<em>——传播AIE(出版、广播、电视等等)，</em><br>　　<em>——文化的AIE(文学、艺术、体育等等）。</em>　</p><p>　　我说过，AIE不能与（镇压性）国家机器混为一谈。那么，是什么构成了它们的区别呢?</p><p>　　第一点，很明显，（镇压性）国家机器只有一个，而意识形态国家机器却有许多。即使我们假定存在着一个由许多AIE构成的统一体，这个统一体也不是直接可以看到的。</p><p>　　第二点，很明显，<span style="background:#d3f8b6">统一的（镇压性）国家机器完全属于公共领域</span>；与之相反，<span style="background:#d3f8b6">绝大部分的意识形态国家机器（它们显然是分散的）是私人领域的组成部分</span>。教会、党派、工会、家庭、某些学校、大多数报纸、各种文化投机事业等等，都是私人性的。</p><p>　　我们可以暂时不管第一点。但一定会有人对第二点提出疑问，问我凭什么把大部分不具有公共地位而完全只是私人性质的那些机构看成是意识形态国家机器呢？作为一个清醒的马克思主义者，葛兰西早已用一句话堵住了这种反对意见。<span style="background:#d3f8b6">公私之分是资产阶级法律内部的区分，在资产阶级法律行使“权威”的（从属）领域是有效的</span>。而国家领域避开了这种区别，因为国家“高于法律”：国家是统治阶级的国家，既不是公共的，也不是私人的；相反，国家是公共与私人之间一切区分的前提。从意识形态国家机器出发，我们也可以这样说。它们在“公共”机构还是“私人”机构中得到实现，这并不重要，问题在于它们如何发挥功能。私人机构完全可以作为意识形态国家机器“发挥功能”。对任何一种AIE进行彻底的理性分析，都能证明这一点。</p><p>　　现在谈一下什么是根本的东西。区分开AIE与（镇压性）国家机器的基本差别是：<span style="background:#ff4d4f">镇压性国家机器“运用暴力”发挥功能，而意识形态国家机器则“运用意识形态”发挥功能</span>。</p><p>　　我可以修改一下这个区分，把问题说清楚。我应该说，<span style="background:#d3f8b6">任何国家机器，无论是镇压性的，还是意识形态的，都既运用暴力也运用意识形态发挥功能</span>，但有一个非常重要的区分，使我们绝对不能把意识形态国家机器与（镇压性）国家机器混为一谈。</p><p>　　这个事实就是，<span style="background:#d3f8b6">（镇压性）国家机器大量并首要地运用镇压（包括肉体的镇压）来发挥功能，而辅之以意识形态</span>。（根本<span style="background:#ff4d4f">不存在纯粹的镇压性机器</span>。）例如，军队和警察<span style="background:#fff88f">为了确保它们自身的凝聚力和再生产，也要凭借它们对外宣扬的“价值”，运用意识形态发挥功能。</span></p><p>　　以同样的方式，只是必须反过来说，意识形态国家机器就其本身而言大量并首要地运用意识形态发挥功能，但是，即使在最后关头（也只有在最后关头），它们也会辅之以镇压——这种镇压是相当削弱和隐蔽的，甚至是象征性的。（根本不存在纯粹的意识形态机器。）例如，<span style="background:#fff88f">学校和教会就使用适当的处罚、开除、选拔等方法，既“规训”它们的牧人，也“规训”它们的羊群。家庭如此……文化的AIE（尤其是审查制度）等等也是如此。</span></p><p>　　<span style="background:#d3f8b6">（镇压性）国家机器或意识形态国家机器按各自的情况（首要地或辅助性地）运用镇压或意识形态的双重方式 “发挥功能”</span>，这一决定因素可以说明（镇压性）国家机器和意识形态国家机器相互作用所交织成的非常微妙、或明或暗的各种结合形式——这一点还有必要再说吗？日常生活给我们提供了无数这样的例证，但是，如果我们打算再进一步，而不是停留在这种单纯的观察上，就必须对它们进行详细的研究。<br>　　<br>　　不过，这番评论使我们接近于了解到，是什么构成了在表面上极不相同的那些AIE的统一体。如果说AIE大量并首要地运用意识形态发挥功能的话，那么正是这种发挥功能的方式把它们的多样性统一了起来，因为它们赖以发挥功能的意识形态本身，不管如何多样，如何矛盾，事实上总是统一<strong>在占统治地位的意识形态底下</strong>的，<span style="background:#ff4d4f">这种占统治地位的意识形态就是“统治阶级”的意识形态</span>。考虑到“统治阶级”通常在事实上会（公开地，或者更多地借助于阶级或阶级的某些部分之间的联盟）掌握国家政权，因而能够任意支配（镇压性）国家机器，我们就应该承认这个统治阶级事实上在意识形态国家机器中同样握有主动权，因为最终总是占统治地位的意识形态在意识形态国家机器里（恰恰是在它内部的矛盾中）获得了实现。当然，在（镇压性）国家机器里运用法律和政令来行事和在意识形态国家机器里通过占统治地位的意识形态这个中介来“行事”，这是非常不同的事情。我们应该仔细研究这种不同——但是，它掩盖不住具有深刻同一性的现实。就我所知，<strong>任何一个阶级如果不在掌握政权的同时对</strong>意识形态国家机器<strong>并在这套机器中行使其领导权的话</strong>，<strong>那么它的政权就不会持久</strong>。我只需要一个例子来证明这一点：列宁忧心忡忡地惦念着教育（及其它）意识形态国家机器的革命化，只是为了让已经夺取国家政权的苏维埃无产阶级能够保证未来的无产阶级专政和向社会主义过渡。<br>　　<br>　　后面这点说明使我们可以了解到，意识形态国家机器也许不只是阶级斗争（往往是表现出激烈形式的阶级斗争）的<strong>赌注</strong>，还是阶级斗争的场所。<span style="background:#fff88f">掌握政权的阶级（或阶级联盟）在AIE中不能像在（镇压性）国家机器中那样轻易地制定法律，这不仅是因为以往那些统治阶级能够在那里长时间地保持牢固的立场，而且也因为被剥削阶级的抵抗能够利用那里的矛盾，能够通过斗争攻克那里的战场，从而在那里找到表现自己的手段和机会。</span></p><p>　　我来概括一下自己的论述。</p><p>　　如果我提出的论点是言之有据的，那么它就可以把我带回经典的马克思主义国家理论，使之在某一方面更加准确。我主张，必须把国家政权（及其被……占有）与国家机器两者区分开来。但我还补充了一点，即国家机器包括两类：一类是代表镇压性国家机器的机构；另一类是代表那些意识形态国家机器的机构。</p><p>　　但如果真是这样，那么一定会有人提出下列问题，甚至是采用对我的意见进行概括的方式：意识形态国家机器究竟的在什么范围内起作用的？它们的重要性是以什么为基础的？换句话说，这些不运用镇压而运用意识形态发挥功能的意识形态国家机器，它们的“功能”是跟什么相一致的呢？</p><h1 id="解读"><a href="#解读" class="headerlink" title="解读"></a>解读</h1><p>意识形态国家机器的作用范围和重要性基于阿尔都塞的理论框架，这一框架强调了意识形态在维护阶级统治中的核心作用。根据阿尔都塞的观点，意识形态国家机器不仅包括传统的政治、法律和军事机构，还包括教育、家庭、宗教等社会结构和实践领域。</p><p>意识形态国家机器的重要性基于其对个体意识和社会意识的影响能力。阿尔都塞认为，意识形态是一种表象体系，它体现了人们在日常生活中对周围世界的无意识体验，并通过这种体验构建了一个具有理性意识的主体幻觉。这种表象体系不仅为资本主义生产关系的再生产提供了必备条件，而且通过文化霸权理论（也就是那个掌握政权的阶级的霸权），确保了统治阶级的思想和价值观能够在社会中占据主导地位。</p><p>意识形态国家机器的功能与维护统治阶级的利益紧密相连。它们通过塑造和传播符合统治阶级利益的意识形态，实现对生产关系的再生产，从而让现有的统治秩序得以延续。这种功能的实现不仅仅依赖于直接的政治压迫或暴力手段，而是更多地依赖于意识形态的力量，即通过教育、媒体、宗教等非直接强制手段影响人们的意识形态和行为模式。</p><p>由于在AIE中存在各种阶级意识形态的矛盾，无产阶级的代言人能有机会在AIE中找到自己的机会，从而在意识形态领域进行斗争，其实这一点也就是造就了今天中文互联网的乱象。但在所谓的“公共领域”依然是统治阶级意识形态占据主导地位。</p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><em>By chatgpt</em><br>意识形态国家机器在维护和再生产统治阶级的利益方面发挥着至关重要的作用。它们通过传播和强化特定的意识形态，影响个体和社会的意识，从而在不直接使用暴力的情况下，实现对社会的控制和统治。这一过程不仅涉及到政治、经济领域，也深入到教育、文化、宗教等多个社会生活的层面。</p><p>没想到我现在还没完全想出来的东西，阿尔都塞早在几十年前就写了出来，今天的左派真应该学习阿尔都塞，这里再借个图便于学习：</p><p><img src="https://pic3.zhimg.com/80/v2-942b347ea5697a4beb0df8d242b5d50a_1440w.webp" alt="img"></p><p>也可以看看这位大佬的文章，写的很用心：<br><a href="https://zhuanlan.zhihu.com/p/665154653">https://zhuanlan.zhihu.com/p/665154653</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;什么是意识形态国家机器（AIE）呢&quot;&gt;&lt;a href=&quot;#什么是意识形态国家机器（AIE）呢&quot; class=&quot;headerlink&quot; title=&quot;什么是意识形态国家机器（AIE）呢?&quot;&gt;&lt;/a&gt;什么是意识形态国家机器（AIE）呢?&lt;/h1&gt;&lt;blockquote</summary>
+      
+    
+    
+    
+    <category term="哲学" scheme="https://blackholemax.github.io/categories/%E5%93%B2%E5%AD%A6/"/>
+    
+    
+    <category term="笔记" scheme="https://blackholemax.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="阅读" scheme="https://blackholemax.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+    <category term="阿尔都塞" scheme="https://blackholemax.github.io/tags/%E9%98%BF%E5%B0%94%E9%83%BD%E5%A1%9E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论阶级革命</title>
+    <link href="https://blackholemax.github.io/2023/03/22/write/revolution/"/>
+    <id>https://blackholemax.github.io/2023/03/22/write/revolution/</id>
+    <published>2023-03-22T11:00:25.000Z</published>
+    <updated>2024-04-28T12:03:34.496Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="论阶级革命"><a href="#论阶级革命" class="headerlink" title="论阶级革命"></a>论阶级革命</h1><h2 id="为什么革命？"><a href="#为什么革命？" class="headerlink" title="为什么革命？"></a>为什么革命？</h2><p>一切历史都是阶级斗争的历史，这是一直是我们认为正确的观点。<br>因此我们可以将革命的发生归于阶级的矛盾，而革命的发生源于一个阶级对于其对立阶级的矛盾不断加深，于是就发生了一场一个阶级要推翻另一个阶级的革命。<br>我们的社会有时会因为政治的变革而产生政治运动，这些运动表现了人民的诉求，但往往不具备革命性，但是存在推进革命到来之进程的作用。这种矛盾在现代社会常表现于经济层面，如债务的积累，或者物价的上涨导致无产阶级无从消费，等等这样以各种形式爆发的经济危机。因此，在上世纪人们饱受资本主义毒害的时代，一群有志青年发起了革命运动来夺取政权，这些涉及到社会根本结构的革命才是阶级的革命，是社会的革命，是真正的革命。往往不改变社会基本运行的我们都不能称之革命，而只是单纯的政权更替而已，或者说是像中国历史上的权贵阶级的互相更替而已。</p><blockquote><p>归根结底，一切革命都必须是社会的革命，以社会的基本变革为基础；否则便不成其为革命，只有改换政府而已。<br>  ——宋庆龄</p></blockquote><h2 id="革命的表现形式"><a href="#革命的表现形式" class="headerlink" title="革命的表现形式"></a>革命的表现形式</h2><p>马哲告诉我们物质之间的矛盾都是对立且统一的，这些革命的阶级性也告诉我们这些阶级之间的矛盾是不可调和的。既然理说不通，而暂时占据优势的阶级又掌握暴力武器，那么暂时弱势的阶级也就只好用尽一切手段，就像毛主席说的要团结一切可以团结的力量，同样使用暴力武器发起革命。<br>也就诞生了毛主席的著名论断——”枪杆子里出革命“。</p><blockquote><p>革命不是请客吃饭，不是做文章，不是绘画绣花，不能那样雅致，那样从容不迫，文质彬彬，那样温良恭俭让。革命是暴动，是一个阶级推翻一个阶级的暴烈的行动。<br>  ——《湖南农民运动考察报告》</p></blockquote><h2 id="革命的目的"><a href="#革命的目的" class="headerlink" title="革命的目的"></a>革命的目的</h2><p>革命是一个阶级改造世界的运动，今天我们常说的左派被称为激进派，这多少在讽刺试图改变阶级命运的人们，“专家”们总认为他们是理想主义者，其实这也能看作是另一阶级保守势力与之的对立，也因此历史的发展是螺旋式上升的，而不是一蹴而就的。通俗来说，革命的目的就是摧毁旧世界，创造一个更加先进的新世界取而代之。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;论阶级革命&quot;&gt;&lt;a href=&quot;#论阶级革命&quot; class=&quot;headerlink&quot; title=&quot;论阶级革命&quot;&gt;&lt;/a&gt;论阶级革命&lt;/h1&gt;&lt;h2 id=&quot;为什么革命？&quot;&gt;&lt;a href=&quot;#为什么革命？&quot; class=&quot;headerlink&quot; title=&quot;为</summary>
+      
+    
+    
+    
+    <category term="社论" scheme="https://blackholemax.github.io/categories/%E7%A4%BE%E8%AE%BA/"/>
+    
+    
+    <category term="随便说说" scheme="https://blackholemax.github.io/tags/%E9%9A%8F%E4%BE%BF%E8%AF%B4%E8%AF%B4/"/>
+    
+    <category term="意识形态" scheme="https://blackholemax.github.io/tags/%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81/"/>
+    
+    <category term="马列" scheme="https://blackholemax.github.io/tags/%E9%A9%AC%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论盲目</title>
+    <link href="https://blackholemax.github.io/2023/03/04/write/%E8%AE%BA%E7%9B%B2%E7%9B%AE/"/>
+    <id>https://blackholemax.github.io/2023/03/04/write/%E8%AE%BA%E7%9B%B2%E7%9B%AE/</id>
+    <published>2023-03-04T08:31:41.000Z</published>
+    <updated>2024-04-28T12:04:46.829Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="论盲目"><a href="#论盲目" class="headerlink" title="论盲目"></a>论盲目</h1><blockquote><p>这场淘金热绑架了人们，以至于人们沉醉其中，以至于忘记了自己在做什么。<br>人们不再大谈理想，<br>人们不断走向虚无，<br>还有多少色彩可以填充飘渺的人间呢？</p></blockquote><p>写一篇文章，坐下来小歇，尤其是我喜欢的。但是我们又何曾不是盲目的呢？有人执着于支配，有人执着于安逸，有人执着于自由。形而上学的说，人又为什么不是善于选择的呢？我们既生于此又有什么资格说人是趋利避害的生物呢？</p><p>的确，人是社会的人，我无数次尝试脱离构成这一切的复杂选择之集合。读了很多书，见了不同的人，回头一看，自己依然困在所谓的“阶级”和“游戏”之中。即使是信仰坚定的共产主义者更甚宗教徒又何曾没有盲目的时候呢？当人与社会之类全都被斩断之时，不妨静下来想想，你怀着的理想为何不是盲目的呢？</p><p>没错，也许你的想法与我不谋而合，并不是社会这一意识会将人与之同化，将人变得盲目。或者说，当人从未靠近它的时候，人就是盲目的，当你的生活只是为了生存，那么你有一天会被社会意识所同化。</p><p>我写下这篇文章并不是在告诉你要远离这里，反而是想告诉你融入它，但不与之同化。如果你能够一个人静默地思考着，那无疑是很棒的，这可以帮助你远离资本主义的浮躁。将你看过的，感受过的，思考过的，转化为自己的哲学，这就足够了。</p><p>哲学的魅力无疑是在于此的。形而上学并没有错，形而上学也是人的逻辑得来的哲学，但是与之相对的唯物辩证法也许才是人认识世界的最好工具。</p><p>人们的生活逐渐被蚕食和吞噬的今天，无论是什么阶级的人都有踏入虚无主义者，逐渐失去了思考自我与意识的能力。我想，只有在未来结束这种不公，人们才能真正地脱离人的生物性，转而真正去研究这一意识存在的意义，世界的意义，也许这才是哲学。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;论盲目&quot;&gt;&lt;a href=&quot;#论盲目&quot; class=&quot;headerlink&quot; title=&quot;论盲目&quot;&gt;&lt;/a&gt;论盲目&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;这场淘金热绑架了人们，以至于人们沉醉其中，以至于忘记了自己在做什么。&lt;br&gt;人们不再大谈理想，&lt;br&gt;人们</summary>
+      
+    
+    
+    
+    <category term="社论" scheme="https://blackholemax.github.io/categories/%E7%A4%BE%E8%AE%BA/"/>
+    
+    
+    <category term="随便说说" scheme="https://blackholemax.github.io/tags/%E9%9A%8F%E4%BE%BF%E8%AF%B4%E8%AF%B4/"/>
+    
+    <category term="思考" scheme="https://blackholemax.github.io/tags/%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论亲情</title>
+    <link href="https://blackholemax.github.io/2023/03/04/write/%E8%AE%BA%E4%BA%B2%E6%83%85/"/>
+    <id>https://blackholemax.github.io/2023/03/04/write/%E8%AE%BA%E4%BA%B2%E6%83%85/</id>
+    <published>2023-03-04T08:31:41.000Z</published>
+    <updated>2024-04-28T14:02:52.947Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="亲情"><a href="#亲情" class="headerlink" title="亲情"></a>亲情</h1><h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><p>如今四、五世同堂那样的大家庭制早已四分五裂，一般家庭多属父母及未成年子女共三、五口人的小家庭制。但是，就连这样简单的家庭模式亦难以久持。<br>中学作文里常常写到种种父母长辈之情感，却不知今天这种话情感早已随着资本主义的洪流变得一再低落。<br>那些望子成龙之辈多少受到唯心主义的影响，由于哲学教育的落寞，今天赛里斯的孩子们往往是被这种异化的亲情无时无刻影响着。由此诞生了这些”鸡娃“的家庭,这难道不是有一种威权式的意识形态压迫吗？</p><h3 id="怎么样？"><a href="#怎么样？" class="headerlink" title="怎么样？"></a>怎么样？</h3><p>曾经的无政府主义者们激进地提出了要消灭家庭，也就是主张消灭国家、消灭家庭、消灭宗教的“三无主义”。这无疑是不符合物质社会的客观发展规律的，尽管这种资本主义下的家庭形态必定被消灭。</p><p>别激动着反对我，大多数时候，眼前的亲情还是会带给人一些欣慰的。每每想到父亲和母亲早出晚归的身影也总能感到一些不可思议的情感。其实这也很好理解，这是人类骨子里的东西，这又何尝不是一种美好的情感呢？善待他人，接受自我的存在。</p><p>也许你会想到古往今来的那些大义灭亲的故事，这难道可以解释成什么大逆不道吗？无非是一些自我价值实现以及为了得到大他者的认同而牺牲了资本主义社会下逐渐单薄了的亲情而已。这样看来，一众欧洲权贵推崇的自由也就不再那么难以理解了，本质上只是有利于个体的社会竞争力而已。今天丝绸国的权贵者又何尝不是如此呢？给予儿女生活上的一些自由也无非是助长社会竞争力，谋求孩子学习新自由主义之风，便于今后适应欧洲文化而已。当然，在无产阶级家庭，更多的是异化家庭对于独生子女的压迫在今天最为常见。</p><h3 id="怎么办？"><a href="#怎么办？" class="headerlink" title="怎么办？"></a>怎么办？</h3><p>今天，经过以上论述，也能推断很多孩子正在遭受这样的家庭教育，尽管这样的亲情并不会发生变化，但往往这样的亲情反而会催生更多的意识形态压迫。那么作为知识分子该如何反对这些家庭意识形态包办体系呢？</p><p>前阵子，我放假空闲时就喜欢和父亲一起读毛选，也正是我的这些小举动，改变了我的家庭结构。</p><p>很久以前，我家的家庭关系还是无比令人感到焦虑的。无论是事业还是教育，都是令当今无产家庭无比头疼的问题。但是如果你真的想摆脱这样家庭威权之暴力，可能只有向家人传播无产阶级的世界观了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;亲情&quot;&gt;&lt;a href=&quot;#亲情&quot; class=&quot;headerlink&quot; title=&quot;亲情&quot;&gt;&lt;/a&gt;亲情&lt;/h1&gt;&lt;h3 id=&quot;引入&quot;&gt;&lt;a href=&quot;#引入&quot; class=&quot;headerlink&quot; title=&quot;引入&quot;&gt;&lt;/a&gt;引入&lt;/h3&gt;&lt;p&gt;如今四</summary>
+      
+    
+    
+    
+    <category term="社论" scheme="https://blackholemax.github.io/categories/%E7%A4%BE%E8%AE%BA/"/>
+    
+    
+    <category term="随便说说" scheme="https://blackholemax.github.io/tags/%E9%9A%8F%E4%BE%BF%E8%AF%B4%E8%AF%B4/"/>
+    
+    <category term="意识形态" scheme="https://blackholemax.github.io/tags/%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>当代唯分论，“什么书该读”</title>
+    <link href="https://blackholemax.github.io/2023/01/19/write/what-to-read/"/>
+    <id>https://blackholemax.github.io/2023/01/19/write/what-to-read/</id>
+    <published>2023-01-19T11:50:35.000Z</published>
+    <updated>2024-04-28T12:09:15.290Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="当代唯分论，”什么书该读”"><a href="#当代唯分论，”什么书该读”" class="headerlink" title="当代唯分论，”什么书该读”"></a>当代唯分论，”什么书该读”</h1><p>可能你很小就听过的，老师说的什么书是该读的，什么书孩子不该读。其实这个问题的问出的前提就是把书籍进行了分类。如同高尔基所说：“书籍是人类进步的阶梯”。书籍使人进步是因为其是科技与文化的载体，更确切的说，书籍中的文字是信息的载体。而非要把信息分个高低，显然是对于文字这一载体的异化。<br>政圈里总有人会极端的抵触反对派，但他们常常是连他们的著作都未曾涉猎过，而只是顶着自家的社科理论去批判反对派的种种行为。正所谓知识不拒多，如果你不去精读反对派的思想，又怎能找出其中的漏洞加以批判呢？某种意义上，这样的人太过教条和死板了。<br>总有人说一些书没有任何意义，告诉孩子那些漫画和玩具书没有任何意义，实际上这样只有反效果，培养一个规矩的工具，从而忽略了孩子天生的想象力。到这里，其实我们不仅仅说的是书籍了，更加是电子游戏、二次元文化等等令年轻人痴迷的信息，说到底这些或是故事，或是自我满足的欲望。毕竟我们的社会不会迎来一个乌托邦，他们总是需要一些幻想。<br>回到“什么书该读”这一问题，因为一切的文字都是由人们撰写的，所以我认为这些信息的本质都是人类，这里的人类不仅仅是种族、文化、哲学，而是人类发展至今的一切的一切。人只要活着就不断地获取信息，繁杂的也好，黑暗的也好，我们都只是不断地接受，与此同时不断地成长。那么我给出的答案是，遇则读，随心而读。一切的信息都是人类的，是人类不断深入自然得出的，尽管你可能会觉得手上的一本和你的学业毫不相干的书显得有些无用，但有时候人不断接受新的信息才会感到充实，大脑获得刺激才会觉得满足，如果你能到这种程度，那一定是你非常喜欢人类，热爱这世间的一切吧。或许我们每天都会获取重复的信息，但从数学角度来说，在“人类”的世界并不存在一个完美的模型，至少不同书籍中的信息以及我们生活的方方面面都不来自抽象世界，而是人们撰写的。<br>总而言之，这都是多多益善的东西。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;当代唯分论，”什么书该读”&quot;&gt;&lt;a href=&quot;#当代唯分论，”什么书该读”&quot; class=&quot;headerlink&quot; title=&quot;当代唯分论，”什么书该读”&quot;&gt;&lt;/a&gt;当代唯分论，”什么书该读”&lt;/h1&gt;&lt;p&gt;可能你很小就听过的，老师说的什么书是该读的，什么书孩</summary>
+      
+    
+    
+    
+    <category term="社论" scheme="https://blackholemax.github.io/categories/%E7%A4%BE%E8%AE%BA/"/>
+    
+    
+    <category term="阅读" scheme="https://blackholemax.github.io/tags/%E9%98%85%E8%AF%BB/"/>
+    
+    <category term="随便说说" scheme="https://blackholemax.github.io/tags/%E9%9A%8F%E4%BE%BF%E8%AF%B4%E8%AF%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>农场主与笨驴</title>
+    <link href="https://blackholemax.github.io/2023/01/04/write/FarmerAndDonkey/"/>
+    <id>https://blackholemax.github.io/2023/01/04/write/FarmerAndDonkey/</id>
+    <published>2023-01-04T11:50:35.000Z</published>
+    <updated>2024-04-28T12:01:29.284Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="农场主与笨驴"><a href="#农场主与笨驴" class="headerlink" title="农场主与笨驴"></a>农场主与笨驴</h1><p>从前有一个农场主，他买来许多驴子为自己拉磨。可是这些驴子总是无精打采的样子，拉磨的时候看起来又慢又笨。于是农场主想出了一个办法，他在驴子的头上吊起一根胡萝卜，这样驴子就会控制不了食欲而追着胡萝卜跑起来了。</p><p>如此，刚开始的时候，驴子们见到了垂涎已久的胡萝卜，纷纷都不要命似的拉起磨来。但是时间久了，农场主发现，很多驴子发现自己怎么都追不上近在咫尺的胡萝卜，于是又变回了它们原本懒散的状态。于是这位机智的农场主又想出了一个法子：也许只需要给这些懒惰的驴子一点威慑就行了。于是农场主改日就养了一条忠实且凶狠的猎犬来监督这些懒惰的驴子拉磨，倒是很快见了成效，在猎犬的威慑下，没有驴子敢轻易在拉磨时偷闲。可是一个月后，驴子们逐渐发现猎犬也并非那么可怕，反而是这些驴子跺几下蹄子的声势给猎犬吓得不轻。</p><p>这下这可令农场主难堪了，想着自己还得靠这些驴子吃上饭呢，这可如何是好。于是农场主只好带上些银两，看看能不能上街讨一些生意来。农场主听闻街上来了一位四处游历的学士，交些银两便能得些锦囊妙计。农场主便向这学士请教了这一问题。</p><p>回到农场后，农场主又多养了几条猎犬，告诉它们每天都准备一根胡萝卜 ，并且把这根胡萝卜奖给拉磨最多的那只驴子。</p><p>果不其然，这些驴子比原本拉磨效率快多了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;农场主与笨驴&quot;&gt;&lt;a href=&quot;#农场主与笨驴&quot; class=&quot;headerlink&quot; title=&quot;农场主与笨驴&quot;&gt;&lt;/a&gt;农场主与笨驴&lt;/h1&gt;&lt;p&gt;从前有一个农场主，他买来许多驴子为自己拉磨。可是这些驴子总是无精打采的样子，拉磨的时候看起来又慢又笨。于是农</summary>
+      
+    
+    
+    
+    <category term="社论" scheme="https://blackholemax.github.io/categories/%E7%A4%BE%E8%AE%BA/"/>
+    
+    
+    <category term="随便说说" scheme="https://blackholemax.github.io/tags/%E9%9A%8F%E4%BE%BF%E8%AF%B4%E8%AF%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何成为一名安那其主义者</title>
+    <link href="https://blackholemax.github.io/2022/12/17/write/BeAnarchist/"/>
+    <id>https://blackholemax.github.io/2022/12/17/write/BeAnarchist/</id>
+    <published>2022-12-17T11:50:35.000Z</published>
+    <updated>2024-04-28T12:03:06.501Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="如何成为一名安那其主义者"><a href="#如何成为一名安那其主义者" class="headerlink" title="如何成为一名安那其主义者"></a>如何成为一名安那其主义者</h1><blockquote><p>You believe in authority. I believe in myself.</p></blockquote><h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>如题，这很简单，只需要你反对authoritarianism即可。<br>安那其主义者不像马克思主义者会考虑种种政 治策略和哲学问题，而是考虑如何形成去权威化的集体，往往会是从不同立场上联合起来。事实上，他们也并没有成功。<br>安那其不是一次革命就可以实现的，它需要的不仅仅是消灭剥削，而是让人类的生产方式到达一个新的高度，再进一步潜移默化地改变原本落后的教育、科技。就连马克思也曾明确指出：“生产力中也包括科学”，“劳动生产力是随着科学和技术的不断进步而不断发展的。”而安那其对于其社会个体的绝对尊重能保持科技创新力的飞速增长，而非当今赛里斯大学里的不断被生产出来用于应试的论文。<br>安那其主义激进吗？对于剥削者来说是激进的，我们要共享劳动经验，废除私有制，我们要摧毁他们的权威大厦。今天赛里斯孩子因跨不进大学的痛哭身影，在所谓的“劳动法”之下进行“自愿交易的工人”，试图反抗的自由主义者被血腥镇压。这一切会在他们组建的大厦不再可以从人民的口袋中捞到一点好处的时候完全消散。当人们不在相信虚伪的人民企业家和腐朽的官僚主义时，他们做出的一切剥削行径会为他们带来懊悔和谴责。</p><h2 id="选读"><a href="#选读" class="headerlink" title="选读"></a>选读</h2><blockquote><p>节选自《无政 府主义手册》</p></blockquote><p>读到这里，你应该对无政府主义社会有个清楚的概念。接下来的挑战便是：如何起而行？ 无政府主义之下又分为许多不同但是互相关连的思想体系。比较完整的无政府主义政治理论包括：联邦主义(Federalism)、 互助主义(Mutualism)、个人主义(Individualism)、工团主义(Syndicalism)、无政府共产主义(Anarchist- communism)、无政府女性主义(Anarchist-feminism)以及境遇主义(Situationism)等等。存在于不同无政府主张之间的争论已有好长一段时间，要了解它们分歧则需要另一本介绍性质的小册子。然而，单就无 政府主义目前的任务而言，每个无政府派系却有一个共识。每个派系都认为在现实生活中实践无政府主义是重要的。如果你准备把接下来几页的想法付诸实践，你便是开始实行拥有你独特色彩的无政府主义，而你也成为无政 府主义行动中的一个成员，而新成员─特别是那些深思熟虑 的成员的加入对于行动来说永远是重要的。试着和你的朋友解释什么是无政府主义，多读点无政府主义的书，和其他无政府主义者交谈，是你的当务之急。无政府主义者只有一种：<strong>独立思考的无政府主义者</strong>。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;如何成为一名安那其主义者&quot;&gt;&lt;a href=&quot;#如何成为一名安那其主义者&quot; class=&quot;headerlink&quot; title=&quot;如何成为一名安那其主义者&quot;&gt;&lt;/a&gt;如何成为一名安那其主义者&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;You believe in au</summary>
+      
+    
+    
+    
+    <category term="社论" scheme="https://blackholemax.github.io/categories/%E7%A4%BE%E8%AE%BA/"/>
+    
+    
+    <category term="随便说说" scheme="https://blackholemax.github.io/tags/%E9%9A%8F%E4%BE%BF%E8%AF%B4%E8%AF%B4/"/>
+    
+    <category term="意识形态" scheme="https://blackholemax.github.io/tags/%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>windows平台最好的包管理器：scoop</title>
+    <link href="https://blackholemax.github.io/2022/12/11/tech/scoop-package-manager/"/>
+    <id>https://blackholemax.github.io/2022/12/11/tech/scoop-package-manager/</id>
+    <published>2022-12-11T11:50:35.000Z</published>
+    <updated>2024-04-28T12:00:18.497Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="windows平台最好的包管理器：scoop"><a href="#windows平台最好的包管理器：scoop" class="headerlink" title="windows平台最好的包管理器：scoop"></a>windows平台最好的包管理器：scoop</h1><h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>一个好的包管理器对于一个开发人员的重要性不言而喻，在windows平台上同类产品还有<strong>winget</strong>和<strong>Chocolatey</strong>。</p><p>winget是微软官方的包管理器，无国内镜像，使用起来急死个人，直接淘汰。Chocolatey 相比 scoop有gui，脚本数量多于scoop，但是其中不少已经没人维护或者不再更新。scoop安装软件包无须关联注册表，作为完全社区化的包管理器，其基本操作与 Chotolatey 类似，除了官方的仓库还有大量由第三方维护的仓库，其维护似乎完胜前者。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol><li><p><strong>在 PowerShell 中打开远程权限</strong></p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="literal">-scope</span> CurrentUser</span><br></pre></td></tr></table></figure></li><li><p><strong>自定义用户（全局）Scoop 安装目录(可选)</strong></p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">environment</span>]::setEnvironmentVariable(<span class="string">&#x27;SCOOP&#x27;</span>, <span class="string">&#x27;Scoop_Path&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br><span class="line"><span class="variable">$env:SCOOP</span>=<span class="string">&#x27;Scoop_Path&#x27;</span></span><br></pre></td></tr></table></figure><p>$env:SCOOP_GLOBAL&#x3D;’GlobalScoop_Path’</p></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**个人比较喜欢全扔在D盘，如下：**</span><br><span class="line"></span><br><span class="line">```powershell</span><br><span class="line">[environment]::setEnvironmentVariable(&#x27;SCOOP&#x27;, &#x27;D:\ScoopApps&#x27;, &#x27;User&#x27;)</span><br><span class="line">$env:SCOOP=&#x27;D:\ScoopApps&#x27;</span><br><span class="line">[environment]::setEnvironmentVariable(&#x27;SCOOP_GLOBAL&#x27;,&#x27;D:\ScoopGlobalApps&#x27;,&#x27;Machine&#x27;)</span><br><span class="line">$env:SCOOP_GLOBAL=&#x27;D:\ScoopGlobalApps&#x27;</span><br></pre></td></tr></table></figure><ol start="3"><li><p><strong>官网提供的安装方式（国内无法使用）：</strong></p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">irm</span> get.scoop.sh | <span class="built_in">iex</span></span><br></pre></td></tr></table></figure><p>国内镜像：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">iwr</span> <span class="literal">-useb</span> https://gitee.com/glsnames/scoop<span class="literal">-installer</span>/raw/master/bin/install.ps1 | <span class="built_in">iex</span></span><br><span class="line">scoop config SCOOP_REPO <span class="string">&#x27;https://gitee.com/glsnames/scoop-installer&#x27;</span></span><br><span class="line">scoop update</span><br></pre></td></tr></table></figure></li></ol><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ol><li><p>添加软件仓库</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add &lt;仓库名称&gt; &lt;仓库地址（可选，之后从该ip获取更新）&gt;</span><br></pre></td></tr></table></figure></li><li><p>输入获取官方提供的仓库(按需添加)</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket known</span><br></pre></td></tr></table></figure></li><li><p>个人力荐的仓库</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main[默认]</span><br><span class="line">extras</span><br><span class="line">versions</span><br><span class="line">nirsoft</span><br></pre></td></tr></table></figure><p> 超多国产软件的仓库（如 wechat）：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add dorado https://github.com/chawyehsu/dorado</span><br></pre></td></tr></table></figure></li><li><p>软件包推荐</p><p>必装(已安装git可以不选)</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git <span class="number">7</span>zip </span><br></pre></td></tr></table></figure><p>可选</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加速下载</span></span><br><span class="line">scoop install aria2</span><br><span class="line"><span class="comment"># 如果使用代理可关闭</span></span><br><span class="line">scoop config aria2<span class="literal">-enabled</span> flase</span><br><span class="line"><span class="comment"># 使用Linux命令行</span></span><br><span class="line">scoop install gow</span><br><span class="line"><span class="comment"># 调用管理员权限</span></span><br><span class="line">scoop install sudo</span><br></pre></td></tr></table></figure></li><li><p>一些其它的操作：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一键更新所有软件</span></span><br><span class="line">scoop update *</span><br><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">scoop search &lt;package&gt;</span><br><span class="line"><span class="comment"># 清除所有下载缓存</span></span><br><span class="line">scoop cache <span class="built_in">rm</span> *</span><br><span class="line"><span class="comment"># 删除所有旧版本应用（scoop会保留旧版本的应用）</span></span><br><span class="line">scoop cleanup *</span><br><span class="line"><span class="comment"># 查看已安装程序</span></span><br><span class="line">scoop list</span><br><span class="line"><span class="comment"># 查看更新</span></span><br><span class="line">scoop status</span><br><span class="line"><span class="comment"># 自身诊断</span></span><br><span class="line">scoop checkup</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;windows平台最好的包管理器：scoop&quot;&gt;&lt;a href=&quot;#windows平台最好的包管理器：scoop&quot; class=&quot;headerlink&quot; title=&quot;windows平台最好的包管理器：scoop&quot;&gt;&lt;/a&gt;windows平台最好的包管理器：sco</summary>
+      
+    
+    
+    
+    <category term="开发" scheme="https://blackholemax.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="开发工具" scheme="https://blackholemax.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+    <category term="Windows" scheme="https://blackholemax.github.io/tags/Windows/"/>
+    
+    <category term="包管理器" scheme="https://blackholemax.github.io/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从Python3快速开始</title>
+    <link href="https://blackholemax.github.io/2022/12/03/tech/python-start/"/>
+    <id>https://blackholemax.github.io/2022/12/03/tech/python-start/</id>
+    <published>2022-12-03T11:50:35.000Z</published>
+    <updated>2024-04-28T12:06:45.163Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>本文针对于想尝试Python3的极客快速入门Python3的语法 ，仅仅归纳一些重点语法，详细可绕道至<a href="https://www.runoob.com/python3/python3-tutorial.html">菜鸟教程</a>。</p></blockquote><h1 id="Python3-基本语法"><a href="#Python3-基本语法" class="headerlink" title="Python3 基本语法"></a>Python3 基本语法</h1><h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>调用”print”函数打印数据：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Hello World!&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Hello&#x27;</span>,<span class="string">&#x27;World!&#x27;</span>)</span><br></pre></td></tr></table></figure><p>字符串可以用单引号和双引号包裹。用逗号分开两个字符串时，python解释器会把它们分隔开打印。</p><p>输出结果都是 <strong>Hello World!</strong></p><h2 id="变量与强制数据类型转换"><a href="#变量与强制数据类型转换" class="headerlink" title="变量与强制数据类型转换"></a>变量与强制数据类型转换</h2><blockquote><p>type和id关键字分别可以返回变量的数据类型和在内存中的标识</p></blockquote><p>定义一些变量：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">&#x27;hello&#x27;</span></span><br><span class="line">str2 = <span class="string">&#x27;5.21&#x27;</span></span><br><span class="line">str3 = <span class="string">&#x27;110&#x27;</span></span><br><span class="line">int1 = <span class="number">10</span></span><br><span class="line">bool1 = <span class="literal">True</span></span><br><span class="line">float1 = <span class="number">3.14</span></span><br></pre></td></tr></table></figure><p>可以用这样的结构进行强制数据类型转换：<strong>数据类型(变量)</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int1 = <span class="string">&#x27;567&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(int1))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">str</span>(int1)))</span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;class &#x27;int&#x27;&gt;</span><br><span class="line">&lt;class &#x27;str&#x27;&gt;</span><br></pre></td></tr></table></figure><h2 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h2><p>此处过于简单，直接上代码：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">1</span> + <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">5</span> - <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="number">2</span> * <span class="number">3</span>)  <span class="comment"># 乘法</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">8</span> / <span class="number">2</span>)  <span class="comment"># 除法</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">11</span> // <span class="number">2</span>)  <span class="comment"># 除法只留整数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">11</span> % <span class="number">2</span>)  <span class="comment"># 除法只留余数</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">2</span> ** <span class="number">3</span>)  <span class="comment"># 幂运算</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">9</span> // -<span class="number">4</span>)</span><br><span class="line"><span class="built_in">print</span>(-<span class="number">9</span> // <span class="number">4</span>)  <span class="comment"># 向下取整</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">9</span> % -<span class="number">4</span>)  <span class="comment"># 公式：余数=被除数-除数*商</span></span><br><span class="line"><span class="built_in">print</span>(-<span class="number">9</span> % <span class="number">4</span>)  <span class="comment"># 3=-9-4*（-3）</span></span><br></pre></td></tr></table></figure><p>输出：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">2</span><br><span class="line">4</span><br><span class="line">6</span><br><span class="line">4.0</span><br><span class="line">5</span><br><span class="line">1</span><br><span class="line">8</span><br><span class="line">-3</span><br><span class="line">-3</span><br><span class="line">-3</span><br><span class="line">3</span><br></pre></td></tr></table></figure><h2 id="一些语法糖"><a href="#一些语法糖" class="headerlink" title="一些语法糖"></a>一些语法糖</h2><p>以下每组中的代码意义相同：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a += <span class="number">30</span></span><br><span class="line">a = a + <span class="number">30</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a -= <span class="number">30</span></span><br><span class="line">a = a - <span class="number">30</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a *= <span class="number">30</span></span><br><span class="line">a = a * <span class="number">30</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a /= <span class="number">30</span></span><br><span class="line">a = a / <span class="number">30</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a //= <span class="number">30</span></span><br><span class="line">a = a // <span class="number">30</span></span><br></pre></td></tr></table></figure><p>以此类推…</p><p>可以这样连续声明变量：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b, c = <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span></span><br><span class="line">a = b = c = <span class="number">20</span></span><br></pre></td></tr></table></figure><p>可以这样输出多个字符串：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;=&quot;</span> * <span class="number">100</span>)</span><br></pre></td></tr></table></figure><p>总之，Python以易用性为理念设计，语法糖数之不尽。</p><h2 id="各种运算符"><a href="#各种运算符" class="headerlink" title="各种运算符"></a>各种运算符</h2><blockquote><p>这里搬了隔壁菜鸟教程的表格</p></blockquote><h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><table><thead><tr><th>运算符</th><th>描述</th><th>实例</th></tr></thead><tbody><tr><td>&#x3D;&#x3D;</td><td>等于 - 比较对象是否相等</td><td>(a &#x3D;&#x3D; b) 返回 False。</td></tr><tr><td>!&#x3D;</td><td>不等于 - 比较两个对象是否不相等</td><td>(a !&#x3D; b) 返回 True。</td></tr><tr><td>&gt;</td><td>大于 - 返回 x 是否大于 y</td><td>(a&gt; b) 返回 False。</td></tr><tr><td>&lt;</td><td>小于 - 返回 x 是否小于 y。所有比较运算符返回 1 表示真，返回 0 表示假。这分别与特殊的变量 True 和 False 等价。注意，这些变量名的大写。</td><td>(a &lt; b) 返回 True。</td></tr><tr><td>&gt;&#x3D;</td><td>大于等于 - 返回 x 是否大于等于 y。</td><td>(a&gt;&#x3D; b) 返回 False。</td></tr><tr><td>&lt;&#x3D;</td><td>小于等于 - 返回 x 是否小于等于 y。</td><td>(a &lt;&#x3D; b) 返回 True。</td></tr></tbody></table><h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><table><thead><tr><th>运算符</th><th>描述</th><th>实例</th></tr></thead><tbody><tr><td>&amp;</td><td>按位与运算符：参与运算的两个值，如果两个相应位都为 1, 则该位的结果为 1, 否则为 0</td><td>(a &amp; b) 输出结果 12 ，二进制解释： 0000 1100</td></tr><tr><td></td><td></td><td>按位或运算符：只要对应的二个二进位有一个为 1 时，结果位就为 1。</td></tr><tr><td>^</td><td>按位异或运算符：当两对应的二进位相异时，结果为 1</td><td>(a ^ b) 输出结果 49 ，二进制解释： 0011 0001</td></tr><tr><td>~</td><td>按位取反运算符：对数据的每个二进制位取反，即把 1 变为 0, 把 0 变为 1。**~x** 类似于 <strong>-x-1</strong></td><td>(~a) 输出结果 -61 ，二进制解释： 1100 0011， 在一个有符号二进制数的补码形式。</td></tr><tr><td>&lt;&lt;</td><td>左移动运算符：运算数的各二进位全部左移若干位，由 “&lt;&lt;” 右边的数指定移动的位数，高位丢弃，低位补 0。</td><td>a &lt;&lt; 2 输出结果 240 ，二进制解释： 1111 0000</td></tr><tr><td>&gt;&gt;</td><td>右移动运算符：把 “&gt;&gt;” 左边的运算数的各二进位全部右移若干位，”&gt;&gt;” 右边的数指定移动的位数</td><td>a &gt;&gt; 2 输出结果 15 ，二进制解释： 0000 1111</td></tr></tbody></table><h3 id="身份运算符"><a href="#身份运算符" class="headerlink" title="身份运算符"></a>身份运算符</h3><table><thead><tr><th>运算符</th><th>描述</th><th>实例</th></tr></thead><tbody><tr><td>is</td><td>is 是判断两个标识符是不是引用自一个对象</td><td><strong>x is y</strong> , 类似 <strong>id(x) &#x3D;&#x3D; id(y)</strong> , 如果引用的是同一个对象则返回 True，否则返回 False</td></tr><tr><td>is not</td><td>is not 是判断两个标识符是不是引用自不同对象</td><td><strong>x is not y</strong> ， 类似  <strong>id(x) !&#x3D; id(y)</strong> 。如果引用的不是同一个对象则返回结果 True，否则返回 False。</td></tr></tbody></table><h3 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h3><p><strong>&#x3D;&#x3D; 和 !&#x3D; 单纯是比较数据本身是否相等</strong></p><p><strong>is 和 is not 则是比较变量在内存中指向对象的地址</strong></p><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>语法格式：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">函数名</span>(<span class="params">参数</span>):</span><br><span class="line">    <span class="keyword">return</span> 返回值</span><br></pre></td></tr></table></figure><p>重点：</p><p>可以在函数中使用：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">global</span> 变量</span><br></pre></td></tr></table></figure><p>这样可以在函数中定义一个全局变量，即使在外部也可以访问。</p><h1 id="小结：关于Python本身"><a href="#小结：关于Python本身" class="headerlink" title="小结：关于Python本身"></a>小结：关于Python本身</h1><ol><li>调包侠，几乎任何开发需求都可以通过 <strong>pip</strong> 或者 <strong>conda</strong> ，安装库之后直接调用函数就可以，非常的方便</li><li>使用广泛，可以开发GUI应用，甚至还有许多基于Python的前端框架</li><li>脚本小子的晋升途径，科研狗必备</li><li>于是，我还是拿它当个玩具吧（阉割大量语法，习惯了C++等语言的朋友会感到开发体验很差，但是写写脚本还是没问题的）</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;本文针对于想尝试Python3的极客快速入门Python3的语法 ，仅仅归纳一些重点语法，详细可绕道至&lt;a href=&quot;https://www.runoob.com/python3/python3-tutorial.html&quot;&gt;菜鸟教程&lt;/a&gt;。&lt;</summary>
+      
+    
+    
+    
+    <category term="开发" scheme="https://blackholemax.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Python3" scheme="https://blackholemax.github.io/tags/Python3/"/>
+    
+    <category term="笔记" scheme="https://blackholemax.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="日常" scheme="https://blackholemax.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正在施工🚧</title>
+    <link href="https://blackholemax.github.io/2022/09/11/write/hello-world/"/>
+    <id>https://blackholemax.github.io/2022/09/11/write/hello-world/</id>
+    <published>2022-09-11T11:50:35.000Z</published>
+    <updated>2024-04-28T11:59:01.910Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to my blog.<br>The blog is under development</p><p>注：该博客于2022年9月11日正式上线</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to my blog.&lt;br&gt;The blog is under development&lt;/p&gt;
+&lt;p&gt;注：该博客于2022年9月11日正式上线&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="开发" scheme="https://blackholemax.github.io/categories/%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="日常" scheme="https://blackholemax.github.io/tags/%E6%97%A5%E5%B8%B8/"/>
+    
+  </entry>
+  
+</feed>
