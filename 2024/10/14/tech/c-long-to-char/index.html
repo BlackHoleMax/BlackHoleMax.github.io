@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blackholemax.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="C语言学习（long和char强制类型转换）在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于long类型通常占用4字节（32位），而char类型占用1字节（8位），在强制转换时，只有long的最低8位会被转换为ch">
+    <meta name="description" content="C语言学习（long和char强制类型转换）在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于long类型通常占用4字节（32位，linux64下占用八字节，不影响本文通用性），而char类型占用1字节（8位），在强">
 <meta property="og:type" content="blog">
 <meta property="og:title" content="C语言学习（long和char强制类型转换）">
 <meta property="og:url" content="https://blackholemax.github.io/2024/10/14/tech/c-long-to-char/index.html">
 <meta property="og:site_name" content="BlackHoleMax">
-<meta property="og:description" content="C语言学习（long和char强制类型转换）在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于long类型通常占用4字节（32位），而char类型占用1字节（8位），在强制转换时，只有long的最低8位会被转换为ch">
+<meta property="og:description" content="C语言学习（long和char强制类型转换）在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于long类型通常占用4字节（32位，linux64下占用八字节，不影响本文通用性），而char类型占用1字节（8位），在强">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-10-14T11:49:29.000Z">
-<meta property="article:modified_time" content="2024-10-14T12:46:17.556Z">
+<meta property="article:modified_time" content="2024-10-14T13:20:31.438Z">
 <meta property="article:author" content="BlackHoleMax">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="C语言">
@@ -211,7 +211,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-10-14 19:49:29 / Modified: 20:46:17" itemprop="dateCreated datePublished" datetime="2024-10-14T19:49:29+08:00">2024-10-14</time>
+      <time title="Created: 2024-10-14 19:49:29 / Modified: 21:20:31" itemprop="dateCreated datePublished" datetime="2024-10-14T19:49:29+08:00">2024-10-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -232,7 +232,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="C语言学习（long和char强制类型转换）"><a href="#C语言学习（long和char强制类型转换）" class="headerlink" title="C语言学习（long和char强制类型转换）"></a>C语言学习（long和char强制类型转换）</h1><p>在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于<code>long</code>类型通常占用4字节（32位），而<code>char</code>类型占用1字节（8位），在强制转换时，只有<code>long</code>的最低8位会被转换为<code>char</code>。这意味着除了最低8位之外的其他位将被丢弃。如果<code>long</code>类型的值是负数，那么在转换为<code>char</code>时，符号位会被扩展。在大多数情况下，这会导致<code>char</code>类型的值变成一个负数，但由于<code>char</code>类型通常以无符号数处理，所以这个负数会被解释为一个正数。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="C语言学习（long和char强制类型转换）"><a href="#C语言学习（long和char强制类型转换）" class="headerlink" title="C语言学习（long和char强制类型转换）"></a>C语言学习（long和char强制类型转换）</h1><p>在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于<code>long</code>类型通常占用4字节（32位，linux64下占用八字节，不影响本文通用性），而<code>char</code>类型占用1字节（8位），在强制转换时，只有<code>long</code>的最低8位会被转换为<code>char</code>。这意味着除了最低8位之外的其他位将被丢弃。如果<code>long</code>类型的值是负数，那么在转换为<code>char</code>时，符号位会被扩展。在大多数情况下，这会导致<code>char</code>类型的值变成一个负数，但由于<code>char</code>类型通常以无符号数处理，所以这个负数会被解释为一个正数。</p>
 <p>示例如何将<code>long</code>类型转换为<code>char</code>类型：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">long</span> l = <span class="number">0x12345678</span>L; <span class="comment">// 一个示例的long值</span></span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 强制类型转换，只取l的最低8位</span></span><br><span class="line">    c = (<span class="type">char</span>)l;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The long value: 0x%lX\n&quot;</span>, l); <span class="comment">// long十六进制输出</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The char value: 0x%X\n&quot;</span>, c);  <span class="comment">// 格式化char打印x，在 ASCII 编码中，字符 x 的十进制值是 120，十六进制值是 0x78，在小端系统中的最低字节就是0x78</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;The char(char) value: %c\n&quot;</span>, c); <span class="comment">// 强转后的char格式化输出，即十六进制数0x78的ASCII编码</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;The char(int) value: %d\n&quot;</span>, c); <span class="comment">// 因为 128 超出了 char 类型的最大值 127。在这种情况下，128 会被解释为 -128</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
