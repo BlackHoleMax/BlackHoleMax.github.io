@@ -20,29 +20,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blackholemax.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="如何成为一名安那其主义者 You believe in authority. I believe in myself.  引入如题，这很简单，只需要你反对authoritarianism即可。安那其主义者不像马克思主义者会考虑种种政 治策略和哲学问题，而是考虑如何形成去权威化的集体，往往会是从不同立场上联合起来。事实上，他们也并没有成功。安那其不是一次革命就可以实现的，它需要的不仅仅是消灭剥削，而">
+    <meta name="description" content="C语言学习（long和char强制类型转换）在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于long类型通常占用4字节（32位），而char类型占用1字节（8位），在强制转换时，只有long的最低8位会被转换为ch">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="如何成为一名安那其主义者">
-<meta property="og:url" content="https://blackholemax.github.io/2022/12/17/write/BeAnarchist/index.html">
+<meta property="og:title" content="C语言学习（long和char强制类型转换）">
+<meta property="og:url" content="https://blackholemax.github.io/2024/10/14/tech/c-long-to-char/index.html">
 <meta property="og:site_name" content="BlackHoleMax">
-<meta property="og:description" content="如何成为一名安那其主义者 You believe in authority. I believe in myself.  引入如题，这很简单，只需要你反对authoritarianism即可。安那其主义者不像马克思主义者会考虑种种政 治策略和哲学问题，而是考虑如何形成去权威化的集体，往往会是从不同立场上联合起来。事实上，他们也并没有成功。安那其不是一次革命就可以实现的，它需要的不仅仅是消灭剥削，而">
+<meta property="og:description" content="C语言学习（long和char强制类型转换）在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于long类型通常占用4字节（32位），而char类型占用1字节（8位），在强制转换时，只有long的最低8位会被转换为ch">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-12-17T11:50:35.000Z">
-<meta property="article:modified_time" content="2024-04-28T12:03:06.501Z">
+<meta property="article:published_time" content="2024-10-14T11:49:29.000Z">
+<meta property="article:modified_time" content="2024-10-14T11:51:17.632Z">
 <meta property="article:author" content="BlackHoleMax">
-<meta property="article:tag" content="随便说说">
-<meta property="article:tag" content="意识形态">
+<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="日常">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://blackholemax.github.io/2022/12/17/write/BeAnarchist/">
+<link rel="canonical" href="https://blackholemax.github.io/2024/10/14/tech/c-long-to-char/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://blackholemax.github.io/2022/12/17/write/BeAnarchist/","path":"2022/12/17/write/BeAnarchist/","title":"如何成为一名安那其主义者"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://blackholemax.github.io/2024/10/14/tech/c-long-to-char/","path":"2024/10/14/tech/c-long-to-char/","title":"C语言学习（long和char强制类型转换）"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>如何成为一名安那其主义者 | BlackHoleMax</title>
+<title>C语言学习（long和char强制类型转换） | BlackHoleMax</title>
   
 
 
@@ -116,7 +117,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%88%90%E4%B8%BA%E4%B8%80%E5%90%8D%E5%AE%89%E9%82%A3%E5%85%B6%E4%B8%BB%E4%B9%89%E8%80%85"><span class="nav-number">1.</span> <span class="nav-text">如何成为一名安那其主义者</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E8%AF%BB"><span class="nav-number">1.2.</span> <span class="nav-text">选读</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%EF%BC%88long%E5%92%8Cchar%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">C语言学习（long和char强制类型转换）</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -180,7 +181,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://blackholemax.github.io/2022/12/17/write/BeAnarchist/">
+    <link itemprop="mainEntityOfPage" href="https://blackholemax.github.io/2024/10/14/tech/c-long-to-char/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/img/logo.jpg">
@@ -193,12 +194,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="如何成为一名安那其主义者 | BlackHoleMax">
+      <meta itemprop="name" content="C语言学习（long和char强制类型转换） | BlackHoleMax">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          如何成为一名安那其主义者
+          C语言学习（long和char强制类型转换）
         </h1>
 
         <div class="post-meta-container">
@@ -208,15 +209,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2022-12-17 19:50:35" itemprop="dateCreated datePublished" datetime="2022-12-17T19:50:35+08:00">2022-12-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-04-28 20:03:06" itemprop="dateModified" datetime="2024-04-28T20:03:06+08:00">2024-04-28</time>
+      <time title="Created: 2024-10-14 19:49:29 / Modified: 19:51:17" itemprop="dateCreated datePublished" datetime="2024-10-14T19:49:29+08:00">2024-10-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -224,7 +219,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%A4%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">社论</span></a>
+          <a href="/categories/%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">开发</span></a>
         </span>
     </span>
 
@@ -237,14 +232,19 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="如何成为一名安那其主义者"><a href="#如何成为一名安那其主义者" class="headerlink" title="如何成为一名安那其主义者"></a>如何成为一名安那其主义者</h1><blockquote>
-<p>You believe in authority. I believe in myself.</p>
-</blockquote>
-<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>如题，这很简单，只需要你反对authoritarianism即可。<br>安那其主义者不像马克思主义者会考虑种种政 治策略和哲学问题，而是考虑如何形成去权威化的集体，往往会是从不同立场上联合起来。事实上，他们也并没有成功。<br>安那其不是一次革命就可以实现的，它需要的不仅仅是消灭剥削，而是让人类的生产方式到达一个新的高度，再进一步潜移默化地改变原本落后的教育、科技。就连马克思也曾明确指出：“生产力中也包括科学”，“劳动生产力是随着科学和技术的不断进步而不断发展的。”而安那其对于其社会个体的绝对尊重能保持科技创新力的飞速增长，而非当今赛里斯大学里的不断被生产出来用于应试的论文。<br>安那其主义激进吗？对于剥削者来说是激进的，我们要共享劳动经验，废除私有制，我们要摧毁他们的权威大厦。今天赛里斯孩子因跨不进大学的痛哭身影，在所谓的“劳动法”之下进行“自愿交易的工人”，试图反抗的自由主义者被血腥镇压。这一切会在他们组建的大厦不再可以从人民的口袋中捞到一点好处的时候完全消散。当人们不在相信虚伪的人民企业家和腐朽的官僚主义时，他们做出的一切剥削行径会为他们带来懊悔和谴责。</p>
-<h2 id="选读"><a href="#选读" class="headerlink" title="选读"></a>选读</h2><blockquote>
-<p>节选自《无政 府主义手册》</p>
-</blockquote>
-<p>读到这里，你应该对无政府主义社会有个清楚的概念。接下来的挑战便是：如何起而行？ 无政府主义之下又分为许多不同但是互相关连的思想体系。比较完整的无政府主义政治理论包括：联邦主义(Federalism)、 互助主义(Mutualism)、个人主义(Individualism)、工团主义(Syndicalism)、无政府共产主义(Anarchist- communism)、无政府女性主义(Anarchist-feminism)以及境遇主义(Situationism)等等。存在于不同无政府主张之间的争论已有好长一段时间，要了解它们分歧则需要另一本介绍性质的小册子。然而，单就无 政府主义目前的任务而言，每个无政府派系却有一个共识。每个派系都认为在现实生活中实践无政府主义是重要的。如果你准备把接下来几页的想法付诸实践，你便是开始实行拥有你独特色彩的无政府主义，而你也成为无政 府主义行动中的一个成员，而新成员─特别是那些深思熟虑 的成员的加入对于行动来说永远是重要的。试着和你的朋友解释什么是无政府主义，多读点无政府主义的书，和其他无政府主义者交谈，是你的当务之急。无政府主义者只有一种：<strong>独立思考的无政府主义者</strong>。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="C语言学习（long和char强制类型转换）"><a href="#C语言学习（long和char强制类型转换）" class="headerlink" title="C语言学习（long和char强制类型转换）"></a>C语言学习（long和char强制类型转换）</h1><p>在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于<code>long</code>类型通常占用4字节（32位），而<code>char</code>类型占用1字节（8位），在强制转换时，只有<code>long</code>的最低8位会被转换为<code>char</code>。这意味着除了最低8位之外的其他位将被丢弃。如果<code>long</code>类型的值是负数，那么在转换为<code>char</code>时，符号位会被扩展。在大多数情况下，这会导致<code>char</code>类型的值变成一个负数，但由于<code>char</code>类型通常以无符号数处理，所以这个负数会被解释为一个正数。<code>char</code>类型在C语言中默认是有符号的，但在某些编译器或平台上，<code>char</code>可能被定义为无符号。这会影响到负数的表示。</p>
+<p>示例如何将<code>long</code>类型转换为<code>char</code>类型：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">long</span> l = <span class="number">0x12345678</span>L; <span class="comment">// 一个示例的long值</span></span><br><span class="line">    <span class="type">char</span> c;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 强制类型转换，只取l的最低8位</span></span><br><span class="line">    c = (<span class="type">char</span>)l;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印结果</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The long value: 0x%lX\n&quot;</span>, l); <span class="comment">// long十六进制输出</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The char value: 0x%X\n&quot;</span>, c);  <span class="comment">// 格式化char打印x，在 ASCII 编码中，字符 x 的十进制值是 120，十六进制值是 0x78，在小端系统中的最低字节就是0x78</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;The char(char) value: %c\n&quot;</span>, c); <span class="comment">// 强转后的char格式化输出，即十六进制数0x78的ASCII编码</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;The char(int) value: %d\n&quot;</span>, c); <span class="comment">// 因为 128 超出了 char 类型的最大值 127。在这种情况下，128 会被解释为 -128</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The long value: 0x12345678</span><br><span class="line">The char value: 0x78</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>long</code>类型的值<code>0x12345678L</code>只有最低8位<code>0x78</code>被转换为<code>char</code>类型。如果<code>long</code>是负数，那么转换的结果将取决于编译器如何处理符号扩展。这种转换可能会导致数据丢失，因此在实际编程中，如果需要处理大量的数据，应该使用足够大的数据类型来避免丢失重要的信息。</p>
+<p>十六进制数通常用来表示无符号整数。然而，如果你想要表示一个负数，你需要使用一个有符号的整数类型，比如<code>int</code>或<code>long</code>。在C语言中，负数通常使用二进制补码形式来表示。在十六进制中表示负数时，你通常会看到一种表示方法，即在十六进制数前加上负号（-）来表示它是负数。但是，这并不是一个真正的十六进制表示，因为十六进制数本身并不包含符号信息。符号是由变量的类型和上下文决定的。</p>
+<p>例如，如果你有一个<code>int</code>类型的变量，并且你想要给它赋一个十六进制表示的负数值，你可以这样做：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> num = <span class="number">-0x1A3F</span>; <span class="comment">// 表示一个负数</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The value of num in decimal: %d\n&quot;</span>, num);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>-0x1A3F</code>是一个负数，它的值是<code>-0x1A3F</code>的二进制补码表示。<code>printf</code>函数会根据<code>int</code>类型来解释这个值，并打印出它的十进制表示。负数在ASCII编码中没有对应的字符，所以在转换成char类型时会显示乱码。<br>如果你想要在十六进制中表示一个负数的二进制补码形式，你需要知道这个数的位宽。例如，如果<code>int</code>是32位宽，那么<code>-0x1A3F</code>的二进制补码表示可能是<code>0xFFFFFFFFFFFFE5C1</code>（这个值取决于<code>0x1A3F</code>的二进制表示和整数的位宽）。<br>在实际编程中，通常不需要手动计算二进制补码形式，因为编译器会自动为你处理这些细节。你只需要使用负号和十六进制数来表示负数即可。</p>
 
     </div>
 
@@ -271,22 +271,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E9%9A%8F%E4%BE%BF%E8%AF%B4%E8%AF%B4/" rel="tag"># 随便说说</a>
-              <a href="/tags/%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81/" rel="tag"># 意识形态</a>
+              <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"># C语言</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag"># 日常</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/12/11/tech/scoop-package-manager/" rel="prev" title="windows平台最好的包管理器：scoop">
-                  <i class="fa fa-angle-left"></i> windows平台最好的包管理器：scoop
+                <a href="/2024/04/28/read/%E6%84%8F%E8%AF%86%E5%BD%A2%E6%80%81%E5%9B%BD%E5%AE%B6%E6%9C%BA%E5%99%A8%EF%BC%88AIE%EF%BC%89/" rel="prev" title="意识形态国家机器（AIE）笔记">
+                  <i class="fa fa-angle-left"></i> 意识形态国家机器（AIE）笔记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/01/04/write/FarmerAndDonkey/" rel="next" title="农场主与笨驴">
-                  农场主与笨驴 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
