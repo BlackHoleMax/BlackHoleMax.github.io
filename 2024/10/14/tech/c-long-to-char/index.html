@@ -28,10 +28,10 @@
 <meta property="og:description" content="C语言学习（long和char强制类型转换）在不同的计算机架构中，数据的存储方式可能不同。大端（Big-endian）和小端（Little-endian）是两种常见的字节序。在大端系统中，数据的高位字节存储在内存的低地址端，在小端系统中，数据的低位字节存储在内存的低地址端。由于long类型通常占用4字节（32位），而char类型占用1字节（8位），在强制转换时，只有long的最低8位会被转换为ch">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-10-14T11:49:29.000Z">
-<meta property="article:modified_time" content="2024-10-14T11:51:17.632Z">
+<meta property="article:modified_time" content="2024-10-14T12:23:04.715Z">
 <meta property="article:author" content="BlackHoleMax">
-<meta property="article:tag" content="C语言">
 <meta property="article:tag" content="笔记">
+<meta property="article:tag" content="C语言">
 <meta property="article:tag" content="日常">
 <meta name="twitter:card" content="summary">
 
@@ -211,7 +211,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-10-14 19:49:29 / Modified: 19:51:17" itemprop="dateCreated datePublished" datetime="2024-10-14T19:49:29+08:00">2024-10-14</time>
+      <time title="Created: 2024-10-14 19:49:29 / Modified: 20:23:04" itemprop="dateCreated datePublished" datetime="2024-10-14T19:49:29+08:00">2024-10-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -239,12 +239,18 @@
 <p>输出:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The long value: 0x12345678</span><br><span class="line">The char value: 0x78</span><br></pre></td></tr></table></figure>
 
-<p>在这个例子中，<code>long</code>类型的值<code>0x12345678L</code>只有最低8位<code>0x78</code>被转换为<code>char</code>类型。如果<code>long</code>是负数，那么转换的结果将取决于编译器如何处理符号扩展。这种转换可能会导致数据丢失，因此在实际编程中，如果需要处理大量的数据，应该使用足够大的数据类型来避免丢失重要的信息。</p>
+<p>在这个例子中，<code>long</code>类型的值<code>0x12345678L</code>只有最低8位<code>0x78</code>被转换为<code>char</code>类型。如果<code>long</code>是负数，那么转换的结果将取决于编译器如何处理符号扩展。这种转换可能会导致数据丢失，因此在实际编程中，如果需要处理大量的数据，<strong>应该使用足够大的数据类型来避免丢失重要的信息</strong>。</p>
 <p>十六进制数通常用来表示无符号整数。然而，如果你想要表示一个负数，你需要使用一个有符号的整数类型，比如<code>int</code>或<code>long</code>。在C语言中，负数通常使用二进制补码形式来表示。在十六进制中表示负数时，你通常会看到一种表示方法，即在十六进制数前加上负号（-）来表示它是负数。但是，这并不是一个真正的十六进制表示，因为十六进制数本身并不包含符号信息。符号是由变量的类型和上下文决定的。</p>
 <p>例如，如果你有一个<code>int</code>类型的变量，并且你想要给它赋一个十六进制表示的负数值，你可以这样做：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> num = <span class="number">-0x1A3F</span>; <span class="comment">// 表示一个负数</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The value of num in decimal: %d\n&quot;</span>, num);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>在这个例子中，<code>-0x1A3F</code>是一个负数，它的值是<code>-0x1A3F</code>的二进制补码表示。<code>printf</code>函数会根据<code>int</code>类型来解释这个值，并打印出它的十进制表示。负数在ASCII编码中没有对应的字符，所以在转换成char类型时会显示乱码。<br>如果你想要在十六进制中表示一个负数的二进制补码形式，你需要知道这个数的位宽。例如，如果<code>int</code>是32位宽，那么<code>-0x1A3F</code>的二进制补码表示可能是<code>0xFFFFFFFFFFFFE5C1</code>（这个值取决于<code>0x1A3F</code>的二进制表示和整数的位宽）。<br>在实际编程中，通常不需要手动计算二进制补码形式，因为编译器会自动为你处理这些细节。你只需要使用负号和十六进制数来表示负数即可。</p>
+<p>long类型的变量<code>l</code>被初始化为 <code>128</code>，其二进制表示是 <code>10000000</code>。当这个值被强制转换为 <code>char</code> 类型时，由于 <code>char</code> 是有符号的，并且只能表示 <code>-128</code> 到 <code>127</code> 的范围，所以 <code>128</code> 的二进制表示 <code>10000000</code> 被解释为 <code>-128</code>，-128 的二进制表示被符号扩展到 long 类型，结果为 4294967168（十六进制<code>0xFFFFFF80</code> 即<code>char</code> 类型中 <code>128</code> 的二进制补码表示，符号扩展的意思是，最高位（符号位）的值会被复制到新类型中所有高位上）。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;The char(long) value: %ld\n&quot;</span>, c); <span class="comment">// 输出4294967168</span></span><br></pre></td></tr></table></figure>
+
+<p>反之，因为 <code>0xFFFFFF80</code> 二进制的最高位是 <code>1</code>，所以它表示一个负数。当我们将这个 <code>char</code> 值转换为 <code>long</code> 类型时，符号位（即 <code>1</code>）会被复制到 <code>long</code> 类型的所有高位上，直到填满整个 <code>long</code> 类型的位宽。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;The char(long) value: %ld\n&quot;</span>, (<span class="type">long</span>)c); <span class="comment">// 强制类型转换了变量c，输出-128</span></span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -271,8 +277,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"># C语言</a>
               <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"># 笔记</a>
+              <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"># C语言</a>
               <a href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag"># 日常</a>
           </div>
 
