@@ -127,18 +127,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -166,6 +166,126 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blackholemax.github.io/2025/06/07/tech/Building_Admin_Pages_with_Element_Plus.md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/logo.jpg">
+      <meta itemprop="name" content="BlackHoleMax">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlackHoleMax">
+      <meta itemprop="description" content="你要反对所有人身上的枷锁，不只你自己身上的枷锁">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | BlackHoleMax">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/06/07/tech/Building_Admin_Pages_with_Element_Plus.md/" class="post-title-link" itemprop="url">Element Plus 组件库架构与主题定制实战</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-06-07 14:00:00 / Modified: 19:55:36" itemprop="dateCreated datePublished" datetime="2025-06-07T14:00:00+08:00">2025-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">前端开发</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Element-Plus-组件库架构与主题定制实战"><a href="#Element-Plus-组件库架构与主题定制实战" class="headerlink" title="Element Plus 组件库架构与主题定制实战"></a>Element Plus 组件库架构与主题定制实战</h2><p>Hey，小伙伴们！今天来聊聊 Element Plus，一个基于 Vue 3 的强大组件库，不仅能快速搭建后台管理页面，还支持深度定制。接下来，我将带大家快速上手，并深入探索如何自定义主题。</p>
+<h3 id="初步配置：快速上手"><a href="#初步配置：快速上手" class="headerlink" title="初步配置：快速上手"></a>初步配置：快速上手</h3><h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><p>确保项目基于 Vue 3，然后安装 Element Plus 和 Element Plus Icons：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install element-plus @element-plus/icons-vue</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add element-plus @element-plus/icons-vue</span><br></pre></td></tr></table></figure>
+
+<h4 id="全局引入"><a href="#全局引入" class="headerlink" title="全局引入"></a>全局引入</h4><p>在项目入口文件 <code>main.js</code> 或 <code>main.ts</code> 中全局引入 Element Plus：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createApp &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">App</span> <span class="keyword">from</span> <span class="string">&#x27;./App.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ElementPlus</span> <span class="keyword">from</span> <span class="string">&#x27;element-plus&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&#x27;element-plus/dist/index.css&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">createApp</span>(<span class="title class_">App</span>)</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">use</span>(<span class="title class_">ElementPlus</span>)</span><br><span class="line">app.<span class="title function_">mount</span>(<span class="string">&#x27;#app&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这种方式适合快速搭建项目，但可能会导致打包体积较大。接下来，我们来看看如何优化。</p>
+<h3 id="进阶操作：按需引入"><a href="#进阶操作：按需引入" class="headerlink" title="进阶操作：按需引入"></a>进阶操作：按需引入</h3><p>按需引入可以显著减少最终打包体积，提升加载速度。</p>
+<h4 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h4><p>安装 <code>unplugin-vue-components</code> 和 <code>unplugin-auto-import</code> 插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install unplugin-vue-components unplugin-auto-import --save-dev</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add unplugin-vue-components unplugin-auto-import --dev</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h4><p>在构建配置文件中（如 <code>vite.config.js</code> 或 <code>webpack.config.js</code>）配置插件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; defineConfig &#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Components</span> <span class="keyword">from</span> <span class="string">&#x27;unplugin-vue-components/vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ElementPlusResolver</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;unplugin-vue-components/resolvers&#x27;</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">AutoImport</span> <span class="keyword">from</span> <span class="string">&#x27;unplugin-auto-import/vite&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">plugins</span>: [</span><br><span class="line">    <span class="title function_">vue</span>(),</span><br><span class="line">    <span class="title class_">AutoImport</span>(&#123;</span><br><span class="line">      <span class="attr">resolvers</span>: [<span class="title class_">ElementPlusResolver</span>()]</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="title class_">Components</span>(&#123;</span><br><span class="line">      <span class="attr">resolvers</span>: [<span class="title class_">ElementPlusResolver</span>()]</span><br><span class="line">    &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这样，组件会自动按需加载，无需手动导入。</p>
+<h3 id="高级定制：自定义主题"><a href="#高级定制：自定义主题" class="headerlink" title="高级定制：自定义主题"></a>高级定制：自定义主题</h3><p>Element Plus 提供了强大的 SCSS 变量覆盖功能，可以轻松定制主题。</p>
+<h4 id="创建-SCSS-文件"><a href="#创建-SCSS-文件" class="headerlink" title="创建 SCSS 文件"></a>创建 SCSS 文件</h4><p>在项目资源文件夹下的 <code>scss</code> 子目录中，创建 <code>custom-theme.scss</code> 文件。路径通常是 <code>src/assets/scss/</code>。</p>
+<h4 id="覆盖默认主题变量"><a href="#覆盖默认主题变量" class="headerlink" title="覆盖默认主题变量"></a>覆盖默认主题变量</h4><p>在 <code>custom-theme.scss</code> 文件中，使用 <code>@forward</code> 指令覆盖默认主题变量：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@forward</span> <span class="string">&quot;element-plus/theme-chalk/src/common/var.scss&quot;</span> with (  </span><br><span class="line">  <span class="variable">$colors</span>: (  </span><br><span class="line">    <span class="string">&quot;primary&quot;</span>: (  </span><br><span class="line">      <span class="string">&quot;base&quot;</span>: <span class="number">#2c82ff</span>,  </span><br><span class="line">    ),  </span><br><span class="line">    <span class="string">&quot;success&quot;</span>: (  </span><br><span class="line">      <span class="string">&quot;base&quot;</span>: <span class="number">#00d68f</span>,  </span><br><span class="line">    ),  </span><br><span class="line">    <span class="string">&quot;warning&quot;</span>: (  </span><br><span class="line">      <span class="string">&quot;base&quot;</span>: <span class="number">#ffaa00</span>,  </span><br><span class="line">    ),  </span><br><span class="line">    <span class="string">&quot;danger&quot;</span>: (  </span><br><span class="line">      <span class="string">&quot;base&quot;</span>: <span class="number">#ff4961</span>,  </span><br><span class="line">    ),  </span><br><span class="line">    <span class="string">&quot;info&quot;</span>: (  </span><br><span class="line">      <span class="string">&quot;base&quot;</span>: <span class="number">#9915c2</span>,  </span><br><span class="line">    ),  </span><br><span class="line">  )</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">@import</span> <span class="string">&quot;element-plus/theme-chalk/src/index.scss&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="引入自定义主题"><a href="#引入自定义主题" class="headerlink" title="引入自定义主题"></a>引入自定义主题</h4><p>在项目入口文件中引入自定义主题文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&#x27;./assets/scss/custom-theme.scss&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>这样，项目中的 Element Plus 组件就会应用你自定义的主题。</p>
+<h3 id="实战应用：打造后台管理页面"><a href="#实战应用：打造后台管理页面" class="headerlink" title="实战应用：打造后台管理页面"></a>实战应用：打造后台管理页面</h3><p>有了前面的配置基础，接下来我们来实战应用一下，构建一个简单的后台管理页面。</p>
+<h4 id="页面布局"><a href="#页面布局" class="headerlink" title="页面布局"></a>页面布局</h4><p>使用 Element Plus 的布局组件搭建页面：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-container</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-header</span>&gt;</span>Header<span class="tag">&lt;/<span class="name">el-header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-container</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-aside</span> <span class="attr">width</span>=<span class="string">&quot;200px&quot;</span>&gt;</span>Aside<span class="tag">&lt;/<span class="name">el-aside</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-main</span>&gt;</span>Main<span class="tag">&lt;/<span class="name">el-main</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">el-container</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="菜单导航"><a href="#菜单导航" class="headerlink" title="菜单导航"></a>菜单导航</h4><p>在 <code>el-aside</code> 中添加 <code>el-menu</code> 组件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-menu</span> <span class="attr">default-active</span>=<span class="string">&quot;2&quot;</span> <span class="attr">class</span>=<span class="string">&quot;el-menu-vertical-demo&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">index</span>=<span class="string">&quot;1&quot;</span>&gt;</span>处理中心<span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-sub-menu</span> <span class="attr">index</span>=<span class="string">&quot;2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">template</span> #<span class="attr">title</span>&gt;</span>我的工作台<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">index</span>=<span class="string">&quot;2-1&quot;</span>&gt;</span>选项1<span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-menu-item</span> <span class="attr">index</span>=<span class="string">&quot;2-2&quot;</span>&gt;</span>选项2<span class="tag">&lt;/<span class="name">el-menu-item</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">el-sub-menu</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-menu</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h4><p>在 <code>el-main</code> 中使用 <code>el-table</code> 和 <code>el-pagination</code> 展示数据：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">el-table</span> <span class="attr">:data</span>=<span class="string">&quot;tableData&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 100%&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">&quot;date&quot;</span> <span class="attr">label</span>=<span class="string">&quot;日期&quot;</span> <span class="attr">width</span>=<span class="string">&quot;150&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">&quot;name&quot;</span> <span class="attr">label</span>=<span class="string">&quot;姓名&quot;</span> <span class="attr">width</span>=<span class="string">&quot;200&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">el-table-column</span> <span class="attr">prop</span>=<span class="string">&quot;address&quot;</span> <span class="attr">label</span>=<span class="string">&quot;地址&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-table-column</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">el-table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">el-pagination</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">size-change</span>=<span class="string">&quot;handleSizeChange&quot;</span></span></span><br><span class="line"><span class="tag">  @<span class="attr">current-change</span>=<span class="string">&quot;handleCurrentChange&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:current-page</span>=<span class="string">&quot;currentPage&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:page-sizes</span>=<span class="string">&quot;[10, 20, 30, 40]&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:page-size</span>=<span class="string">&quot;pageSize&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">layout</span>=<span class="string">&quot;total, sizes, prev, pager, next, jumper&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">:total</span>=<span class="string">&quot;400&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">el-pagination</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过这些组件的组合，可以快速构建出一个功能完善的后台管理页面。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -994,134 +1114,6 @@
 <p>节选自《无政 府主义手册》</p>
 </blockquote>
 <p>读到这里，你应该对无政府主义社会有个清楚的概念。接下来的挑战便是：如何起而行？ 无政府主义之下又分为许多不同但是互相关连的思想体系。比较完整的无政府主义政治理论包括：联邦主义(Federalism)、 互助主义(Mutualism)、个人主义(Individualism)、工团主义(Syndicalism)、无政府共产主义(Anarchist- communism)、无政府女性主义(Anarchist-feminism)以及境遇主义(Situationism)等等。存在于不同无政府主张之间的争论已有好长一段时间，要了解它们分歧则需要另一本介绍性质的小册子。然而，单就无 政府主义目前的任务而言，每个无政府派系却有一个共识。每个派系都认为在现实生活中实践无政府主义是重要的。如果你准备把接下来几页的想法付诸实践，你便是开始实行拥有你独特色彩的无政府主义，而你也成为无政 府主义行动中的一个成员，而新成员─特别是那些深思熟虑 的成员的加入对于行动来说永远是重要的。试着和你的朋友解释什么是无政府主义，多读点无政府主义的书，和其他无政府主义者交谈，是你的当务之急。无政府主义者只有一种：<strong>独立思考的无政府主义者</strong>。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blackholemax.github.io/2022/12/11/tech/scoop-package-manager/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/img/logo.jpg">
-      <meta itemprop="name" content="BlackHoleMax">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BlackHoleMax">
-      <meta itemprop="description" content="你要反对所有人身上的枷锁，不只你自己身上的枷锁">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BlackHoleMax">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/12/11/tech/scoop-package-manager/" class="post-title-link" itemprop="url">windows平台最好的包管理器：scoop</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-12-11 19:50:35" itemprop="dateCreated datePublished" datetime="2022-12-11T19:50:35+08:00">2022-12-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-06-11 10:18:59" itemprop="dateModified" datetime="2024-06-11T10:18:59+08:00">2024-06-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">开发</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="windows平台最好的包管理器：scoop"><a href="#windows平台最好的包管理器：scoop" class="headerlink" title="windows平台最好的包管理器：scoop"></a>windows平台最好的包管理器：scoop</h1><h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>一个好的包管理器对于一个开发人员的重要性不言而喻，在windows平台上同类产品还有<strong>winget</strong>和<strong>Chocolatey</strong>。</p>
-<p>winget是微软官方的包管理器，无国内镜像，使用起来急死个人，直接淘汰。Chocolatey 相比 scoop有gui，脚本数量多于scoop，但是其中不少已经没人维护或者不再更新。scoop安装软件包无须关联注册表，作为完全社区化的包管理器，其基本操作与 Chotolatey 类似，除了官方的仓库还有大量由第三方维护的仓库，其维护似乎完胜前者。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li><p><strong>在 PowerShell 中打开远程权限</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="literal">-scope</span> CurrentUser</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>自定义用户（全局）Scoop 安装目录(可选)</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">environment</span>]::setEnvironmentVariable(<span class="string">&#x27;SCOOP&#x27;</span>, <span class="string">&#x27;Scoop_Path&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br><span class="line"><span class="variable">$env:SCOOP</span>=<span class="string">&#x27;Scoop_Path&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>$env:SCOOP_GLOBAL&#x3D;’GlobalScoop_Path’</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**个人比较喜欢全扔在D盘，如下：**</span><br><span class="line"></span><br><span class="line">```powershell</span><br><span class="line">[environment]::setEnvironmentVariable(&#x27;SCOOP&#x27;, &#x27;D:\ScoopApps&#x27;, &#x27;User&#x27;)</span><br><span class="line">$env:SCOOP=&#x27;D:\ScoopApps&#x27;</span><br><span class="line">[environment]::setEnvironmentVariable(&#x27;SCOOP_GLOBAL&#x27;,&#x27;D:\ScoopGlobalApps&#x27;,&#x27;Machine&#x27;)</span><br><span class="line">$env:SCOOP_GLOBAL=&#x27;D:\ScoopGlobalApps&#x27;</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p><strong>官网提供的安装方式（国内无法使用）：</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">irm</span> get.scoop.sh | <span class="built_in">iex</span></span><br></pre></td></tr></table></figure>
-
-<p>国内镜像：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">iwr</span> <span class="literal">-useb</span> https://gitee.com/glsnames/scoop<span class="literal">-installer</span>/raw/master/bin/install.ps1 | <span class="built_in">iex</span></span><br><span class="line">scoop config SCOOP_REPO <span class="string">&#x27;https://gitee.com/glsnames/scoop-installer&#x27;</span></span><br><span class="line">scoop update</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ol>
-<li><p>添加软件仓库</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add &lt;仓库名称&gt; &lt;仓库地址（可选，之后从该ip获取更新）&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>输入获取官方提供的仓库(按需添加)</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket known</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>个人力荐的仓库</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main[默认]</span><br><span class="line">extras</span><br><span class="line">versions</span><br><span class="line">nirsoft</span><br></pre></td></tr></table></figure>
-
-<p> 超多国产软件的仓库（如 wechat）：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add dorado https://github.com/chawyehsu/dorado</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>软件包推荐</p>
-<p>必装(已安装git可以不选)</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git <span class="number">7</span>zip </span><br></pre></td></tr></table></figure>
-
-<p>可选</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加速下载</span></span><br><span class="line">scoop install aria2</span><br><span class="line"><span class="comment"># 如果使用代理可关闭</span></span><br><span class="line">scoop config aria2<span class="literal">-enabled</span> flase</span><br><span class="line"><span class="comment"># 使用Linux命令行</span></span><br><span class="line">scoop install gow</span><br><span class="line"><span class="comment"># 调用管理员权限</span></span><br><span class="line">scoop install sudo</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一些其它的操作：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一键更新所有软件</span></span><br><span class="line">scoop update *</span><br><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">scoop search &lt;package&gt;</span><br><span class="line"><span class="comment"># 清除所有下载缓存</span></span><br><span class="line">scoop cache <span class="built_in">rm</span> *</span><br><span class="line"><span class="comment"># 删除所有旧版本应用（scoop会保留旧版本的应用）</span></span><br><span class="line">scoop cleanup *</span><br><span class="line"><span class="comment"># 查看已安装程序</span></span><br><span class="line">scoop list</span><br><span class="line"><span class="comment"># 查看更新</span></span><br><span class="line">scoop status</span><br><span class="line"><span class="comment"># 自身诊断</span></span><br><span class="line">scoop checkup</span><br></pre></td></tr></table></figure></li>
-</ol>
 
       
     </div>
