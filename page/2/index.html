@@ -127,18 +127,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -166,134 +166,6 @@
     </div>
 
     <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blackholemax.github.io/2022/12/11/tech/scoop-package-manager/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/img/logo.jpg">
-      <meta itemprop="name" content="BlackHoleMax">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BlackHoleMax">
-      <meta itemprop="description" content="你要反对所有人身上的枷锁，不只你自己身上的枷锁">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BlackHoleMax">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/12/11/tech/scoop-package-manager/" class="post-title-link" itemprop="url">windows平台最好的包管理器：scoop</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-12-11 19:50:35" itemprop="dateCreated datePublished" datetime="2022-12-11T19:50:35+08:00">2022-12-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-06-11 10:18:59" itemprop="dateModified" datetime="2024-06-11T10:18:59+08:00">2024-06-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">开发</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="windows平台最好的包管理器：scoop"><a href="#windows平台最好的包管理器：scoop" class="headerlink" title="windows平台最好的包管理器：scoop"></a>windows平台最好的包管理器：scoop</h1><h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>一个好的包管理器对于一个开发人员的重要性不言而喻，在windows平台上同类产品还有<strong>winget</strong>和<strong>Chocolatey</strong>。</p>
-<p>winget是微软官方的包管理器，无国内镜像，使用起来急死个人，直接淘汰。Chocolatey 相比 scoop有gui，脚本数量多于scoop，但是其中不少已经没人维护或者不再更新。scoop安装软件包无须关联注册表，作为完全社区化的包管理器，其基本操作与 Chotolatey 类似，除了官方的仓库还有大量由第三方维护的仓库，其维护似乎完胜前者。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li><p><strong>在 PowerShell 中打开远程权限</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="literal">-scope</span> CurrentUser</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>自定义用户（全局）Scoop 安装目录(可选)</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">environment</span>]::setEnvironmentVariable(<span class="string">&#x27;SCOOP&#x27;</span>, <span class="string">&#x27;Scoop_Path&#x27;</span>, <span class="string">&#x27;User&#x27;</span>)</span><br><span class="line"><span class="variable">$env:SCOOP</span>=<span class="string">&#x27;Scoop_Path&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>$env:SCOOP_GLOBAL&#x3D;’GlobalScoop_Path’</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**个人比较喜欢全扔在D盘，如下：**</span><br><span class="line"></span><br><span class="line">```powershell</span><br><span class="line">[environment]::setEnvironmentVariable(&#x27;SCOOP&#x27;, &#x27;D:\ScoopApps&#x27;, &#x27;User&#x27;)</span><br><span class="line">$env:SCOOP=&#x27;D:\ScoopApps&#x27;</span><br><span class="line">[environment]::setEnvironmentVariable(&#x27;SCOOP_GLOBAL&#x27;,&#x27;D:\ScoopGlobalApps&#x27;,&#x27;Machine&#x27;)</span><br><span class="line">$env:SCOOP_GLOBAL=&#x27;D:\ScoopGlobalApps&#x27;</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p><strong>官网提供的安装方式（国内无法使用）：</strong></p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">irm</span> get.scoop.sh | <span class="built_in">iex</span></span><br></pre></td></tr></table></figure>
-
-<p>国内镜像：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">iwr</span> <span class="literal">-useb</span> https://gitee.com/glsnames/scoop<span class="literal">-installer</span>/raw/master/bin/install.ps1 | <span class="built_in">iex</span></span><br><span class="line">scoop config SCOOP_REPO <span class="string">&#x27;https://gitee.com/glsnames/scoop-installer&#x27;</span></span><br><span class="line">scoop update</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><ol>
-<li><p>添加软件仓库</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add &lt;仓库名称&gt; &lt;仓库地址（可选，之后从该ip获取更新）&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>输入获取官方提供的仓库(按需添加)</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket known</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>个人力荐的仓库</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">main[默认]</span><br><span class="line">extras</span><br><span class="line">versions</span><br><span class="line">nirsoft</span><br></pre></td></tr></table></figure>
-
-<p> 超多国产软件的仓库（如 wechat）：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop bucket add dorado https://github.com/chawyehsu/dorado</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>软件包推荐</p>
-<p>必装(已安装git可以不选)</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoop install git <span class="number">7</span>zip </span><br></pre></td></tr></table></figure>
-
-<p>可选</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 加速下载</span></span><br><span class="line">scoop install aria2</span><br><span class="line"><span class="comment"># 如果使用代理可关闭</span></span><br><span class="line">scoop config aria2<span class="literal">-enabled</span> flase</span><br><span class="line"><span class="comment"># 使用Linux命令行</span></span><br><span class="line">scoop install gow</span><br><span class="line"><span class="comment"># 调用管理员权限</span></span><br><span class="line">scoop install sudo</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>一些其它的操作：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 一键更新所有软件</span></span><br><span class="line">scoop update *</span><br><span class="line"><span class="comment"># 搜索</span></span><br><span class="line">scoop search &lt;package&gt;</span><br><span class="line"><span class="comment"># 清除所有下载缓存</span></span><br><span class="line">scoop cache <span class="built_in">rm</span> *</span><br><span class="line"><span class="comment"># 删除所有旧版本应用（scoop会保留旧版本的应用）</span></span><br><span class="line">scoop cleanup *</span><br><span class="line"><span class="comment"># 查看已安装程序</span></span><br><span class="line">scoop list</span><br><span class="line"><span class="comment"># 查看更新</span></span><br><span class="line">scoop status</span><br><span class="line"><span class="comment"># 自身诊断</span></span><br><span class="line">scoop checkup</span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
 
     
 
@@ -339,7 +211,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-04-28 20:06:45" itemprop="dateModified" datetime="2024-04-28T20:06:45+08:00">2024-04-28</time>
+      <time title="Modified: 2025-06-28 13:20:38" itemprop="dateModified" datetime="2025-06-28T13:20:38+08:00">2025-06-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -584,7 +456,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-04-28 19:59:01" itemprop="dateModified" datetime="2024-04-28T19:59:01+08:00">2024-04-28</time>
+      <time title="Modified: 2025-06-28 13:20:38" itemprop="dateModified" datetime="2025-06-28T13:20:38+08:00">2025-06-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
