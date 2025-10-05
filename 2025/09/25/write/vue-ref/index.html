@@ -28,7 +28,7 @@
 <meta property="og:description" content="一张图记住结论：Vue2 &#x3D; 递归属性劫持（defineProperty）Vue3 &#x3D; 整体对象代理（Proxy）   1. 为什么要变？   痛点 Vue2 表现 Vue3 解决    新增&#x2F;删除属性 不能自动触发更新 自动追踪   数组下标&#x2F;length 需要重写 7 个变异方法 原生语法直接拦截   深层对象 初始化时一次性递归，耗时 用到哪层代理哪">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-09-25T06:00:00.000Z">
-<meta property="article:modified_time" content="2025-10-01T12:29:33.557Z">
+<meta property="article:modified_time" content="2025-10-05T13:35:29.052Z">
 <meta property="article:author" content="BlackHoleMax">
 <meta property="article:tag" content="Vue">
 <meta property="article:tag" content="Reactivity">
@@ -218,7 +218,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-10-01 20:29:33" itemprop="dateModified" datetime="2025-10-01T20:29:33+08:00">2025-10-01</time>
+      <time title="Modified: 2025-10-05 21:35:29" itemprop="dateModified" datetime="2025-10-05T21:35:29+08:00">2025-10-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -302,10 +302,6 @@
 <li><a target="_blank" rel="noopener" href="https://github.com/vuejs/core/tree/main/packages/reactivity">Vue3 源码笔记 - packages&#x2F;reactivity</a></li>
 <li>MDN: <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Proxy">Proxy</a></li>
 </ul>
-<hr>
-<blockquote>
-<p>若本文对你有帮助，欢迎 Star &#x2F; 留言纠错！</p>
-</blockquote>
 
     </div>
 
