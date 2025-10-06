@@ -127,18 +127,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -166,6 +166,144 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://blackholemax.github.io/2025/10/06/write/podman-webdav-bookmark-sync/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/img/logo.jpg">
+      <meta itemprop="name" content="BlackHoleMax">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BlackHoleMax">
+      <meta itemprop="description" content="你要反对所有人身上的枷锁，不只你自己身上的枷锁">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | BlackHoleMax">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/10/06/write/podman-webdav-bookmark-sync/" class="post-title-link" itemprop="url">用 Podman 在家用电脑搭私人 WebDAV 书签同步服务</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2025-10-06 20:10:00 / Modified: 21:07:29" itemprop="dateCreated datePublished" datetime="2025-10-06T20:10:00+08:00">2025-10-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%BF%90%E7%BB%B4/" itemprop="url" rel="index"><span itemprop="name">运维</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>环境：Linux Mint 21.x | Podman 4.9 | rootless 模式<br>目标：开机自启、崩溃自恢复、全浏览器通用、零翻墙。</p>
+</blockquote>
+<hr>
+<h2 id="1-最终效果"><a href="#1-最终效果" class="headerlink" title="1. 最终效果"></a>1. 最终效果</h2><ul>
+<li>Chrome &#x2F; Edge &#x2F; Firefox 通过 <a target="_blank" rel="noopener" href="https://floccus.org/">Floccus</a> 插件把书签实时同步到 <strong>本地 WebDAV</strong>。</li>
+<li>数据落盘 <code>~/webdav/data/bookmarks.xbel</code>，完全私有。</li>
+<li>使用 <strong>Podman Pod + 用户级 systemd</strong> 托管，重启后无需登录即可自动拉起。</li>
+</ul>
+<hr>
+<h2 id="2-一键脚本（用户级-systemd）"><a href="#2-一键脚本（用户级-systemd）" class="headerlink" title="2. 一键脚本（用户级 systemd）"></a>2. 一键脚本（用户级 systemd）</h2><p>把下面保存为 <code>~/bin/webdav-pod.sh</code> 并给执行权限：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/usr/bin/env bash</span></span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line">POD_NAME=webdav-pod</span><br><span class="line">PORT=18080</span><br><span class="line">USER=floccus</span><br><span class="line">PASS=$(openssl rand -hex 8)</span><br><span class="line">DATA_DIR=<span class="string">&quot;<span class="variable">$HOME</span>/webdav/data&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">mkdir</span> -p <span class="string">&quot;<span class="variable">$DATA_DIR</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;PASSWORD=<span class="variable">$PASS</span>&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 1. 创建 Pod（rootless）</span></span><br><span class="line">podman pod create --name <span class="string">&quot;<span class="variable">$POD_NAME</span>&quot;</span> -p <span class="string">&quot;<span class="variable">$PORT</span>&quot;</span>:80</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 运行容器（rootless）</span></span><br><span class="line">podman run -d --restart=no --pod <span class="string">&quot;<span class="variable">$POD_NAME</span>&quot;</span> \</span><br><span class="line">  --name webdav \</span><br><span class="line">  -e USERNAME=<span class="string">&quot;<span class="variable">$USER</span>&quot;</span> \</span><br><span class="line">  -e PASSWORD=<span class="string">&quot;<span class="variable">$PASS</span>&quot;</span> \</span><br><span class="line">  -v <span class="string">&quot;<span class="variable">$DATA_DIR</span>&quot;</span>:/var/lib/dav:Z \</span><br><span class="line">  docker.io/bytemark/webdav <span class="comment"># 无法拉取镜像需要配置podman国内源</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 生成用户级 systemd 单元</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/.config/systemd/user</span><br><span class="line"><span class="built_in">cd</span> ~/.config/systemd/user</span><br><span class="line">podman generate systemd --name <span class="string">&quot;<span class="variable">$POD_NAME</span>&quot;</span> --files --new</span><br><span class="line">systemctl --user daemon-reload</span><br><span class="line">systemctl --user <span class="built_in">enable</span> --now <span class="string">&quot;pod-<span class="variable">$&#123;POD_NAME&#125;</span>.service&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> +x ~/bin/webdav-pod.sh</span><br><span class="line">~/bin/webdav-pod.sh</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="3-浏览器配置（Floccus）"><a href="#3-浏览器配置（Floccus）" class="headerlink" title="3. 浏览器配置（Floccus）"></a>3. 浏览器配置（Floccus）</h2><table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>服务器地址</td>
+<td><code>http://&lt;电脑IP&gt;:18080/</code></td>
+</tr>
+<tr>
+<td>用户名</td>
+<td><code>floccus</code></td>
+</tr>
+<tr>
+<td>密码</td>
+<td>脚本输出的 16 位随机串</td>
+</tr>
+<tr>
+<td>书签路径</td>
+<td><code>bookmarks.xbel</code></td>
+</tr>
+<tr>
+<td>同步策略</td>
+<td>双向同步，15 min</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="4-日常运维（用户级）"><a href="#4-日常运维（用户级）" class="headerlink" title="4. 日常运维（用户级）"></a>4. 日常运维（用户级）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 看日志</span></span><br><span class="line">journalctl --user -u pod-webdav-pod -f</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启 Pod（含内部容器）</span></span><br><span class="line">systemctl --user restart pod-webdav-pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># 备份书签</span></span><br><span class="line"><span class="built_in">cp</span> ~/webdav/data/bookmarks.xbel&#123;,.$(<span class="built_in">date</span> +%F)&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="5-卸载清理（用户级）"><a href="#5-卸载清理（用户级）" class="headerlink" title="5. 卸载清理（用户级）"></a>5. 卸载清理（用户级）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl --user stop pod-webdav-pod</span><br><span class="line">systemctl --user <span class="built_in">disable</span> pod-webdav-pod</span><br><span class="line"><span class="built_in">rm</span> -f ~/.config/systemd/user/&#123;pod,pod-webdav-pod,container-webdav&#125;.service</span><br><span class="line">systemctl --user daemon-reload</span><br><span class="line">podman pod <span class="built_in">rm</span> -f webdav-pod</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="6-同步插件下载地址"><a href="#6-同步插件下载地址" class="headerlink" title="6. 同步插件下载地址"></a>6. 同步插件下载地址</h2><ul>
+<li><p>Chrome &#x2F; Edge:<br><a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/floccus-bookmarks-sync/fnaicdffflnofjppbagibeoednhnbjhg">https://chrome.google.com/webstore/detail/floccus-bookmarks-sync/fnaicdffflnofjppbagibeoednhnbjhg</a></p>
+</li>
+<li><p>Firefox:<br><a target="_blank" rel="noopener" href="https://addons.mozilla.org/firefox/addon/floccus/">https://addons.mozilla.org/firefox/addon/floccus/</a></p>
+</li>
+</ul>
+<hr>
+<p>整个方案 <strong>零依赖云厂商</strong>，换电脑&#x2F;重装系统只需把 <code>~/webdav/data</code> 备份带走，再跑一遍脚本即可恢复同步。Happy syncing!</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1223,91 +1361,6 @@
 <p>我写下这篇文章并不是在告诉你要远离这里，反而是想告诉你融入它，但不与之同化。如果你能够一个人静默地思考着，那无疑是很棒的，这可以帮助你远离资本主义的浮躁。将你看过的，感受过的，思考过的，转化为自己的哲学，这就足够了。</p>
 <p>哲学的魅力无疑是在于此的。形而上学并没有错，形而上学也是人的逻辑得来的哲学，但是与之相对的唯物辩证法也许才是人认识世界的最好工具。</p>
 <p>人们的生活逐渐被蚕食和吞噬的今天，无论是什么阶级的人都有踏入虚无主义者，逐渐失去了思考自我与意识的能力。我想，只有在未来结束这种不公，人们才能真正地脱离人的生物性，转而真正去研究这一意识存在的意义，世界的意义，也许这才是哲学。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blackholemax.github.io/2023/01/19/write/what-to-read/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/img/logo.jpg">
-      <meta itemprop="name" content="BlackHoleMax">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BlackHoleMax">
-      <meta itemprop="description" content="你要反对所有人身上的枷锁，不只你自己身上的枷锁">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | BlackHoleMax">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/01/19/write/what-to-read/" class="post-title-link" itemprop="url">当代唯分论，“什么书该读”</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-01-19 19:50:35" itemprop="dateCreated datePublished" datetime="2023-01-19T19:50:35+08:00">2023-01-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-09-27 00:05:06" itemprop="dateModified" datetime="2025-09-27T00:05:06+08:00">2025-09-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%A4%BE%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">社论</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="当代唯分论，”什么书该读”"><a href="#当代唯分论，”什么书该读”" class="headerlink" title="当代唯分论，”什么书该读”"></a>当代唯分论，”什么书该读”</h1><p>可能你很小就听过的，老师说的什么书是该读的，什么书孩子不该读。其实这个问题的问出的前提就是把书籍进行了分类。如同高尔基所说：“书籍是人类进步的阶梯”。书籍使人进步是因为其是科技与文化的载体，更确切的说，书籍中的文字是信息的载体。而非要把信息分个高低，显然是对于文字这一载体的异化。<br>政圈里总有人会极端的抵触反对派，但他们常常是连他们的著作都未曾涉猎过，而只是顶着自家的社科理论去批判反对派的种种行为。正所谓知识不拒多，如果你不去精读反对派的思想，又怎能找出其中的漏洞加以批判呢？某种意义上，这样的人太过教条和死板了。<br>总有人说一些书没有任何意义，告诉孩子那些漫画和玩具书没有任何意义，实际上这样只有反效果，培养一个规矩的工具，从而忽略了孩子天生的想象力。到这里，其实我们不仅仅说的是书籍了，更加是电子游戏、二次元文化等等令年轻人痴迷的信息，说到底这些或是故事，或是自我满足的欲望。毕竟我们的社会不会迎来一个乌托邦，他们总是需要一些幻想。<br>回到“什么书该读”这一问题，因为一切的文字都是由人们撰写的，所以我认为这些信息的本质都是人类，这里的人类不仅仅是种族、文化、哲学，而是人类发展至今的一切的一切。人只要活着就不断地获取信息，繁杂的也好，黑暗的也好，我们都只是不断地接受，与此同时不断地成长。那么我给出的答案是，遇则读，随心而读。一切的信息都是人类的，是人类不断深入自然得出的，尽管你可能会觉得手上的一本和你的学业毫不相干的书显得有些无用，但有时候人不断接受新的信息才会感到充实，大脑获得刺激才会觉得满足，如果你能到这种程度，那一定是你非常喜欢人类，热爱这世间的一切吧。或许我们每天都会获取重复的信息，但从数学角度来说，在“人类”的世界并不存在一个完美的模型，至少不同书籍中的信息以及我们生活的方方面面都不来自抽象世界，而是人们撰写的。<br>总而言之，这都是多多益善的东西。</p>
 
       
     </div>
